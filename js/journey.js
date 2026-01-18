@@ -1022,16 +1022,138 @@ const journeyData = {
     // Quran Scientific Facts
     quran_science: {
         id: 'quran_science',
-        title: 'Scientific Facts in the Quran',
-        content: 'The Quran mentions: embryo development stages (23:12-14), expanding universe (51:47), mountains as pegs (78:7), barrier between seas (55:19-20), the water cycle (23:18), and more. These weren\'t discovered by science until centuries later.',
+        title: 'Scientific Miracles in the Quran',
+        content: 'The Quran contains many statements about the natural world that align with modern scientific discoveries - remarkable for a book from the 7th century. Let\'s explore some specific examples.',
+        verse: {
+            arabic: 'سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ',
+            translation: 'We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.',
+            reference: 'Surah Fussilat 41:53'
+        },
+        options: [
+            { label: 'Embryology miracle', next: 'miracle_embryo' },
+            { label: 'Universe & cosmology', next: 'miracle_cosmos' },
+            { label: 'Oceans & water', next: 'miracle_seas' },
+            { label: 'Mountains & geology', next: 'miracle_mountains' },
+            { label: 'Iron from space', next: 'miracle_iron' },
+            { label: 'Fingerprints', next: 'miracle_fingerprints' }
+        ]
+    },
+
+    // Embryology Miracle
+    miracle_embryo: {
+        id: 'miracle_embryo',
+        title: 'Human Embryology in the Quran',
+        content: 'The Quran describes human embryonic development with remarkable accuracy: from a drop (nutfah), to a clinging clot (alaqah), to a chewed lump (mudghah), to bones clothed with flesh. The word "alaqah" means something that clings - exactly what the embryo does. This description matches what scientists discovered only with microscopes in the 20th century.',
+        verse: {
+            arabic: 'ثُمَّ خَلَقْنَا النُّطْفَةَ عَلَقَةً فَخَلَقْنَا الْعَلَقَةَ مُضْغَةً فَخَلَقْنَا الْمُضْغَةَ عِظَامًا فَكَسَوْنَا الْعِظَامَ لَحْمًا',
+            translation: 'Then We made the sperm-drop into a clinging clot, and We made the clot into a lump [of flesh], and We made the lump bones, and We covered the bones with flesh.',
+            reference: 'Surah Al-Mu\'minun 23:14'
+        },
+        options: [
+            { label: 'More scientific miracles', next: 'quran_science' },
+            { label: 'This is remarkable', next: 'about_quran' },
+            { label: 'How to become Muslim?', next: 'become_muslim' }
+        ]
+    },
+
+    // Cosmology Miracle
+    miracle_cosmos: {
+        id: 'miracle_cosmos',
+        title: 'The Big Bang & Expanding Universe',
+        content: 'The Quran describes that the heavens and earth were once joined together (the singularity before the Big Bang), and that the universe is expanding. The Big Bang theory was only proposed in 1927 by Georges Lemaître, and the expanding universe was confirmed by Edwin Hubble in 1929. Yet the Quran mentioned this 1,400 years ago!',
+        verse: {
+            arabic: 'أَوَلَمْ يَرَ الَّذِينَ كَفَرُوا أَنَّ السَّمَاوَاتِ وَالْأَرْضَ كَانَتَا رَتْقًا فَفَتَقْنَاهُمَا',
+            translation: 'Have those who disbelieved not considered that the heavens and the earth were a joined entity, and We separated them?',
+            reference: 'Surah Al-Anbiya 21:30'
+        },
+        options: [
+            { label: 'Expanding universe verse', next: 'miracle_expanding' },
+            { label: 'More scientific miracles', next: 'quran_science' },
+            { label: 'I\'m convinced', next: 'become_muslim' }
+        ]
+    },
+
+    // Expanding Universe
+    miracle_expanding: {
+        id: 'miracle_expanding',
+        title: 'The Ever-Expanding Universe',
+        content: 'The Arabic word "la-mūsi\'ūn" (لَمُوسِعُونَ) means "We are expanders" - present tense, indicating ongoing expansion. This precisely matches what modern cosmology tells us: the universe is continuously expanding, discovered by Hubble nearly 1,400 years after the Quran was revealed.',
         verse: {
             arabic: 'وَالسَّمَاءَ بَنَيْنَاهَا بِأَيْدٍ وَإِنَّا لَمُوسِعُونَ',
             translation: 'And the heaven We constructed with strength, and indeed, We are [its] expander.',
-            reference: 'Surah Adh-Dhariyat 51:47 - About the expanding universe'
+            reference: 'Surah Adh-Dhariyat 51:47'
         },
         options: [
-            { label: 'This is remarkable', next: 'about_quran' },
-            { label: 'Islam basics', next: 'islam_basics' },
+            { label: 'More scientific miracles', next: 'quran_science' },
+            { label: 'Tell me about the Quran', next: 'about_quran' },
+            { label: 'How to become Muslim?', next: 'become_muslim' }
+        ]
+    },
+
+    // Seas Barrier Miracle
+    miracle_seas: {
+        id: 'miracle_seas',
+        title: 'The Barrier Between Two Seas',
+        content: 'The Quran describes a barrier between two bodies of salt water that meet but do not mix. Modern oceanography has confirmed this phenomenon: where different seas meet (like the Mediterranean and Atlantic), they have distinct temperatures, salinity, and densities that create an invisible barrier. This was only discovered with modern technology.',
+        verse: {
+            arabic: 'مَرَجَ الْبَحْرَيْنِ يَلْتَقِيَانِ بَيْنَهُمَا بَرْزَخٌ لَّا يَبْغِيَانِ',
+            translation: 'He released the two seas, meeting [side by side]; between them is a barrier so neither of them transgresses.',
+            reference: 'Surah Ar-Rahman 55:19-20'
+        },
+        options: [
+            { label: 'More miracles', next: 'quran_science' },
+            { label: 'Learn about Islam', next: 'about_quran' },
+            { label: 'How to become Muslim?', next: 'become_muslim' }
+        ]
+    },
+
+    // Mountains Miracle
+    miracle_mountains: {
+        id: 'miracle_mountains',
+        title: 'Mountains as Stakes',
+        content: 'The Quran describes mountains as "pegs" or "stakes" (awtad). Modern geology has confirmed that mountains have deep roots beneath the surface that stabilize the Earth\'s crust - just like tent pegs. This wasn\'t known until the 19th century when scientists discovered that mountains extend deep into the lithosphere.',
+        verse: {
+            arabic: 'وَالْجِبَالَ أَوْتَادًا',
+            translation: 'And the mountains as stakes.',
+            reference: 'Surah An-Naba 78:7'
+        },
+        options: [
+            { label: 'More miracles', next: 'quran_science' },
+            { label: 'Tell me about Islam', next: 'about_quran' },
+            { label: 'How to become Muslim?', next: 'become_muslim' }
+        ]
+    },
+
+    // Iron Miracle
+    miracle_iron: {
+        id: 'miracle_iron',
+        title: 'Iron Sent Down from Space',
+        content: 'The Quran says iron was "sent down" (anzalna) to Earth. Modern astrophysics confirms that iron was not formed on Earth - it was created in distant stars through nuclear fusion and delivered to Earth through meteorites billions of years ago. The word "sent down" is remarkably accurate!',
+        verse: {
+            arabic: 'وَأَنزَلْنَا الْحَدِيدَ فِيهِ بَأْسٌ شَدِيدٌ وَمَنَافِعُ لِلنَّاسِ',
+            translation: 'And We sent down iron, wherein is great military might and benefits for the people.',
+            reference: 'Surah Al-Hadid 57:25'
+        },
+        options: [
+            { label: 'More miracles', next: 'quran_science' },
+            { label: 'About the Quran', next: 'about_quran' },
+            { label: 'How to become Muslim?', next: 'become_muslim' }
+        ]
+    },
+
+    // Fingerprints Miracle
+    miracle_fingerprints: {
+        id: 'miracle_fingerprints',
+        title: 'The Uniqueness of Fingerprints',
+        content: 'When deniers questioned resurrection, the Quran responded by emphasizing Allah\'s ability to recreate even fingertips - highlighting the complexity and uniqueness of fingerprints. Fingerprint uniqueness was only scientifically established in the late 19th century and is now used for identification. Why mention fingertips specifically unless highlighting their unique nature?',
+        verse: {
+            arabic: 'بَلَىٰ قَادِرِينَ عَلَىٰ أَن نُّسَوِّيَ بَنَانَهُ',
+            translation: 'Yes! We are able to put together in perfect order the very tips of his fingers.',
+            reference: 'Surah Al-Qiyamah 75:4'
+        },
+        options: [
+            { label: 'More miracles', next: 'quran_science' },
+            { label: 'About Islam', next: 'about_quran' },
             { label: 'How to become Muslim?', next: 'become_muslim' }
         ]
     },

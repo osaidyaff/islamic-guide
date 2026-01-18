@@ -198,6 +198,41 @@ body {
     color: var(--dark-green);
 }
 
+/* Secondary button variant for light backgrounds */
+.btn-secondary-light {
+    background: var(--white);
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.btn-secondary-light:hover {
+    background: var(--primary-green);
+    color: var(--white);
+}
+
+/* Auto-adjust secondary buttons on light backgrounds */
+.section:not(.hero) .btn-secondary,
+.card .btn-secondary,
+.featured-verse:not([style*="background: var(--white)"]) .btn-secondary,
+.quran-search .btn-secondary,
+.verse-display .btn-secondary,
+.verse-navigation .btn-secondary,
+.journey-card .btn-secondary {
+    background: var(--cream);
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.section:not(.hero) .btn-secondary:hover,
+.card .btn-secondary:hover,
+.quran-search .btn-secondary:hover,
+.verse-display .btn-secondary:hover,
+.verse-navigation .btn-secondary:hover,
+.journey-card .btn-secondary:hover {
+    background: var(--primary-green);
+    color: var(--white);
+}
+
 .btn-green {
     background: var(--primary-green);
     color: var(--white);

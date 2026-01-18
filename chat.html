@@ -18,9 +18,11 @@
             justify-content: center;
             gap: 0.5rem;
             margin-top: 1rem;
+            padding: 0 1rem;
         }
         #suggested-questions button {
-            border-color: var(--primary-green);
+            background: var(--cream);
+            border: 2px solid var(--primary-green);
             color: var(--primary-green);
         }
         #suggested-questions button:hover {
@@ -39,6 +41,16 @@
         .language-selector option {
             background: var(--dark-green);
             color: var(--white);
+        }
+        .free-badge {
+            background: var(--gold);
+            color: var(--dark-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
         }
     </style>
 </head>
@@ -64,40 +76,15 @@
     </nav>
 
     <main>
-        <!-- API Key Setup Section -->
-        <div id="api-setup" class="container" style="display: none;">
-            <div class="api-setup">
-                <h2 class="text-green" data-i18n="chatSetupTitle">Setup AI Assistant</h2>
-                <p class="mb-3" data-i18n="chatSetupDesc">To use the AI chat, you need an OpenAI API key. Your key is stored locally in your browser and never sent to our servers.</p>
-
-                <div style="text-align: left; background: var(--cream); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                    <p><strong data-i18n="chatHowTo">How to get an API key:</strong></p>
-                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                        <li>Go to <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a></li>
-                        <li>Sign up or log in</li>
-                        <li>Go to API Keys section</li>
-                        <li>Create a new secret key</li>
-                        <li>Copy and paste it below</li>
-                    </ol>
-                </div>
-
-                <input type="password" id="api-key-input" placeholder="Enter your OpenAI API key (sk-...)" autocomplete="off">
-                <button id="save-key-btn" class="btn btn-primary" style="width: 100%;" data-i18n="chatSaveKey">Save API Key</button>
-
-                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-light);" data-i18n="chatKeyNote">
-                    Your API key is stored securely in your browser's local storage. We never see or store your key on our servers.
-                </p>
-            </div>
-        </div>
+        <!-- API Setup Section (hidden - kept for compatibility) -->
+        <div id="api-setup" style="display: none;"></div>
 
         <!-- Chat Section -->
-        <div id="chat-section" class="chat-container" style="display: none;">
+        <div id="chat-section" class="chat-container">
             <div class="chat-header">
                 <h2 data-i18n="chatTitle">Islamic Knowledge Assistant</h2>
                 <p data-i18n="chatSubtitle">Ask any question about Islam - Quran, Hadith, practices, and more</p>
-                <button id="clear-key-btn" style="background: transparent; border: 1px solid white; color: white; padding: 0.25rem 0.75rem; border-radius: 4px; cursor: pointer; font-size: 0.8rem; margin-top: 0.5rem;" data-i18n="chatChangeKey">
-                    Change API Key
-                </button>
+                <span class="free-badge">Free - No API Key Required</span>
             </div>
 
             <div id="chat-messages" class="chat-messages">

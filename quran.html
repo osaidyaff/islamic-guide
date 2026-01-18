@@ -202,6 +202,8 @@
             <a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a>
             <a href="quran.html" data-i18n="navQuran">Quran</a>
             <a href="hadith.html" data-i18n="navHadith">Hadith</a>
+            <a href="search.html" style="color: var(--light-gold);">Search</a>
+            <a href="feedback.html" style="color: var(--light-gold);">Feedback</a>
         </div>
     </footer>
 
@@ -215,6 +217,17 @@
                 langNav.innerHTML = createLanguageSelector();
             }
             window.quranReader = new QuranReader();
+
+            // Handle URL parameters for direct verse navigation
+            const urlParams = new URLSearchParams(window.location.search);
+            const surah = urlParams.get('surah');
+            const ayah = urlParams.get('ayah');
+
+            if (surah && ayah && window.quranReader) {
+                setTimeout(() => {
+                    window.quranReader.fetchVerse(parseInt(surah), parseInt(ayah));
+                }, 500);
+            }
         });
     </script>
 </body>

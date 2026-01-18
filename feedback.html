@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Islamic Guidance</title>
+    <meta name="description" content="Share your feedback, suggestions, or questions about Islamic Guidance website.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .arabic-font { font-family: 'Amiri', 'Traditional Arabic', serif; }
+        .language-selector {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .language-selector option {
+            background: var(--dark-green);
+            color: var(--white);
+        }
+        .feedback-form {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-green);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: var(--dark-green);
+        }
+        .contact-info {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--dark-green);
+            transform: translateY(-2px);
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        .success-message h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="pattern-bg">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="arabic" style="font-size: 1.5rem;">&#x262A;</span>
+                <h1>Islamic Guidance</h1>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="navHome">Home</a></li>
+                <li><a href="chat.html" data-i18n="navAskAi">Ask AI</a></li>
+                <li><a href="journey.html" data-i18n="navJourney">Your Journey</a></li>
+                <li><a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a></li>
+                <li><a href="quran.html" data-i18n="navQuran">Quran</a></li>
+                <li><a href="hadith.html" data-i18n="navHadith">Hadith</a></li>
+            </ul>
+            <div id="lang-selector-nav"></div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="padding: 2rem;">
+        <div class="hero-content">
+            <p class="bismillah arabic-font" style="font-size: 2rem;">نحن نستمع إليك</p>
+            <h2>Share Your Feedback</h2>
+            <p>Your thoughts help us improve and serve the community better</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <div id="feedback-form-container" class="feedback-form">
+                <h3 style="color: var(--primary-green); text-align: center; margin-bottom: 1.5rem;">
+                    We'd Love to Hear From You
+                </h3>
+
+                <form id="feedback-form" action="https://formsubmit.co/osaidyaff@gmail.com" method="POST">
+                    <!-- Honeypot for spam prevention -->
+                    <input type="text" name="_honey" style="display:none">
+                    <!-- Disable captcha -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Success page redirect -->
+                    <input type="hidden" name="_next" value="https://osaidyaff.github.io/islamic-guide/feedback.html?success=true">
+                    <!-- Subject -->
+                    <input type="hidden" name="_subject" value="New Feedback from Islamic Guidance Website">
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Feedback Type</label>
+                        <select id="type" name="type" required>
+                            <option value="">Select a type...</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="question">Question about Islam</option>
+                            <option value="bug">Report a Problem</option>
+                            <option value="appreciation">Appreciation</option>
+                            <option value="content">Content Correction</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Share your thoughts, suggestions, or questions..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Feedback</button>
+                </form>
+
+                <div class="contact-info">
+                    <p style="color: var(--text-light);">You can also reach us directly:</p>
+                    <p style="margin-top: 0.5rem;">
+                        <a href="mailto:osaidyaff@gmail.com" style="color: var(--primary-green); font-weight: 600;">
+                            osaidyaff@gmail.com
+                        </a>
+                    </p>
+
+                    <div class="social-links">
+                        <a href="https://github.com/osaidyaff/islamic-guide" target="_blank" title="GitHub" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="success-message" class="feedback-form success-message">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">&#x2714;</div>
+                <h3>JazakAllahu Khayran!</h3>
+                <p class="arabic-font" style="font-size: 1.3rem; color: var(--gold); margin-bottom: 1rem;">جزاك الله خيراً</p>
+                <p style="color: var(--text-light); margin-bottom: 2rem;">
+                    Thank you for your feedback! May Allah reward you for helping us improve.
+                </p>
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="bismillah arabic-font">الحمد لله رب العالمين</p>
+        <p>All praise is due to Allah, Lord of all the worlds</p>
+        <div class="footer-links">
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="chat.html" data-i18n="navAskAi">Ask AI</a>
+            <a href="journey.html" data-i18n="navJourney">Journey</a>
+            <a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a>
+            <a href="quran.html" data-i18n="navQuran">Quran</a>
+            <a href="hadith.html" data-i18n="navHadith">Hadith</a>
+        </div>
+        <p class="mt-3" style="opacity: 0.7;" data-i18n="footerMade">Made with love for the sake of Allah</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/translations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langNav = document.getElementById('lang-selector-nav');
+            if (langNav) {
+                langNav.innerHTML = createLanguageSelector();
+            }
+
+            // Check for success parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                document.getElementById('feedback-form-container').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
