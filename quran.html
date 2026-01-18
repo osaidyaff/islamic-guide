@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Quran - Islamic Guidance</title>
+    <meta name="description" content="Read the Holy Quran with Arabic text and English translation. Explore verses and discover the divine message.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .arabic-font { font-family: 'Amiri', 'Traditional Arabic', serif; }
+        .arabic-text { font-family: 'Amiri', 'Traditional Arabic', serif; }
+        .language-selector {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .language-selector option {
+            background: var(--dark-green);
+            color: var(--white);
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--white);
+            font-family: 'Amiri', serif;
+        }
+    </style>
+</head>
+<body class="pattern-bg">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="arabic" style="font-size: 1.5rem;">&#x262A;</span>
+                <h1>Islamic Guidance</h1>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="navHome">Home</a></li>
+                <li><a href="chat.html" data-i18n="navAskAi">Ask AI</a></li>
+                <li><a href="journey.html" data-i18n="navJourney">Your Journey</a></li>
+                <li><a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a></li>
+                <li><a href="quran.html" class="active" data-i18n="navQuran">Quran</a></li>
+                <li><a href="hadith.html" data-i18n="navHadith">Hadith</a></li>
+            </ul>
+            <div id="lang-selector-nav"></div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="padding: 2rem;">
+        <div class="hero-content">
+            <p class="bismillah arabic-font" style="font-size: 2rem;">ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ هُدًى لِّلْمُتَّقِينَ</p>
+            <p style="font-style: italic;">"This is the Book about which there is no doubt, a guidance for those conscious of Allah."</p>
+            <p style="color: var(--gold);">Surah Al-Baqarah 2:2</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Search Section -->
+            <div class="quran-search">
+                <h3 style="color: var(--primary-green); margin-bottom: 1rem; text-align: center;" data-i18n="quranExplore">Explore the Quran</h3>
+                <div class="search-row">
+                    <select id="surah-select">
+                        <option value="" data-i18n="quranSelectSurah">Select Surah</option>
+                    </select>
+                    <input type="number" id="ayah-input" data-i18n-placeholder="quranVerse" placeholder="Verse #" min="1" max="286" value="1">
+                    <button id="go-btn" class="btn btn-primary" data-i18n="quranGo">Go</button>
+                    <button id="random-btn" class="btn btn-secondary" data-i18n="quranRandom">Random Verse</button>
+                </div>
+            </div>
+
+            <!-- Verse Display -->
+            <div id="verse-display" class="verse-display">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <span>Loading verse...</span>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="verse-navigation">
+                <button id="prev-btn" class="btn btn-secondary" data-i18n="quranPrev">Previous Verse</button>
+                <button id="next-btn" class="btn btn-secondary" data-i18n="quranNext">Next Verse</button>
+            </div>
+
+            <!-- About Quran Section -->
+            <div style="margin-top: 3rem;">
+                <div class="section-title">
+                    <h2 data-i18n="quranAboutTitle">About the Holy Quran</h2>
+                    <p data-i18n="quranAboutDesc">The final revelation from Allah to mankind</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="icon-circle">
+                            <span style="font-family: 'Amiri', serif;">قرآن</span>
+                        </div>
+                        <h3 data-i18n="quranWhatIs">What is the Quran?</h3>
+                        <p data-i18n="quranWhatIsDesc">The Quran is the literal word of Allah, revealed to Prophet Muhammad (peace be upon him) through Angel Jibreel (Gabriel) over 23 years. It contains 114 chapters (Surahs) and over 6,000 verses (Ayahs).</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon-circle">
+                            <span style="font-family: 'Amiri', serif;">محفوظ</span>
+                        </div>
+                        <h3 data-i18n="quranPreserved">Perfectly Preserved</h3>
+                        <p data-i18n="quranPreservedDesc">The Quran is the only religious scripture that has been preserved in its original language, letter by letter, for over 1,400 years. Millions of Muslims have memorized it entirely.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon-circle">
+                            <span style="font-family: 'Amiri', serif;">هدى</span>
+                        </div>
+                        <h3 data-i18n="quranGuidance">Guidance for All</h3>
+                        <p data-i18n="quranGuidanceDesc">The Quran provides guidance on all aspects of life: worship, family, business, justice, and spirituality. It is a mercy and healing for the hearts of believers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Surahs -->
+            <div style="margin-top: 3rem;">
+                <div class="section-title">
+                    <h2 data-i18n="quranNotable">Notable Surahs</h2>
+                    <p data-i18n="quranNotableDesc">Some chapters hold special significance</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card" style="cursor: pointer;" onclick="window.quranReader?.fetchVerse(1, 1)">
+                        <h3 style="color: var(--primary-green);">Al-Fatihah</h3>
+                        <p class="arabic-font" style="font-size: 1.3rem; color: var(--gold);">الفاتحة</p>
+                        <p>The Opening - Recited in every prayer. The essence of the Quran in 7 verses.</p>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;" onclick="window.quranReader?.fetchVerse(2, 255)">
+                        <h3 style="color: var(--primary-green);">Ayatul Kursi</h3>
+                        <p class="arabic-font" style="font-size: 1.3rem; color: var(--gold);">آية الكرسي</p>
+                        <p>The Throne Verse (2:255) - The greatest verse in the Quran about Allah's majesty.</p>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;" onclick="window.quranReader?.fetchVerse(112, 1)">
+                        <h3 style="color: var(--primary-green);">Al-Ikhlas</h3>
+                        <p class="arabic-font" style="font-size: 1.3rem; color: var(--gold);">الإخلاص</p>
+                        <p>The Sincerity - Equal to one-third of the Quran in meaning. Pure monotheism.</p>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;" onclick="window.quranReader?.fetchVerse(36, 1)">
+                        <h3 style="color: var(--primary-green);">Ya-Sin</h3>
+                        <p class="arabic-font" style="font-size: 1.3rem; color: var(--gold);">يس</p>
+                        <p>The Heart of the Quran - Covers resurrection, prophethood, and tawheed.</p>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;" onclick="window.quranReader?.fetchVerse(55, 1)">
+                        <h3 style="color: var(--primary-green);">Ar-Rahman</h3>
+                        <p class="arabic-font" style="font-size: 1.3rem; color: var(--gold);">الرحمن</p>
+                        <p>The Most Merciful - Beautiful poetic description of Allah's blessings.</p>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;" onclick="window.quranReader?.fetchVerse(67, 1)">
+                        <h3 style="color: var(--primary-green);">Al-Mulk</h3>
+                        <p class="arabic-font" style="font-size: 1.3rem; color: var(--gold);">الملك</p>
+                        <p>The Dominion - Protects from punishment of the grave when recited nightly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div style="margin-top: 3rem; text-align: center;">
+                <div class="featured-verse">
+                    <p class="arabic arabic-font" style="font-size: 1.8rem;">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ</p>
+                    <p class="translation">"Indeed, it is We who sent down the Quran and indeed, We will be its guardian."</p>
+                    <p class="reference">Surah Al-Hijr 15:9</p>
+                </div>
+                <a href="chat.html" class="btn btn-primary mt-3" data-i18n="quranAskAi">Ask AI About Quran Verses</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="bismillah arabic-font">الحمد لله رب العالمين</p>
+        <p>All praise is due to Allah, Lord of all the worlds</p>
+        <div class="footer-links">
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="chat.html" data-i18n="navAskAi">Ask AI</a>
+            <a href="journey.html" data-i18n="navJourney">Journey</a>
+            <a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a>
+            <a href="quran.html" data-i18n="navQuran">Quran</a>
+            <a href="hadith.html" data-i18n="navHadith">Hadith</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/quran.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langNav = document.getElementById('lang-selector-nav');
+            if (langNav) {
+                langNav.innerHTML = createLanguageSelector();
+            }
+            window.quranReader = new QuranReader();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask AI - Islamic Guidance</title>
+    <meta name="description" content="Ask questions about Islam and receive knowledgeable answers from our AI assistant.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .arabic-font { font-family: 'Amiri', 'Traditional Arabic', serif; }
+        .chat-page { min-height: 100vh; display: flex; flex-direction: column; }
+        .chat-page main { flex: 1; padding: 1rem; }
+        #suggested-questions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        #suggested-questions button {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+        }
+        #suggested-questions button:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+        .language-selector {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .language-selector option {
+            background: var(--dark-green);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body class="chat-page pattern-bg">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="arabic" style="font-size: 1.5rem;">&#x262A;</span>
+                <h1>Islamic Guidance</h1>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="navHome">Home</a></li>
+                <li><a href="chat.html" class="active" data-i18n="navAskAi">Ask AI</a></li>
+                <li><a href="journey.html" data-i18n="navJourney">Your Journey</a></li>
+                <li><a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a></li>
+                <li><a href="quran.html" data-i18n="navQuran">Quran</a></li>
+                <li><a href="hadith.html" data-i18n="navHadith">Hadith</a></li>
+            </ul>
+            <div id="lang-selector-nav"></div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- API Key Setup Section -->
+        <div id="api-setup" class="container" style="display: none;">
+            <div class="api-setup">
+                <h2 class="text-green" data-i18n="chatSetupTitle">Setup AI Assistant</h2>
+                <p class="mb-3" data-i18n="chatSetupDesc">To use the AI chat, you need an OpenAI API key. Your key is stored locally in your browser and never sent to our servers.</p>
+
+                <div style="text-align: left; background: var(--cream); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p><strong data-i18n="chatHowTo">How to get an API key:</strong></p>
+                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Go to <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a></li>
+                        <li>Sign up or log in</li>
+                        <li>Go to API Keys section</li>
+                        <li>Create a new secret key</li>
+                        <li>Copy and paste it below</li>
+                    </ol>
+                </div>
+
+                <input type="password" id="api-key-input" placeholder="Enter your OpenAI API key (sk-...)" autocomplete="off">
+                <button id="save-key-btn" class="btn btn-primary" style="width: 100%;" data-i18n="chatSaveKey">Save API Key</button>
+
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-light);" data-i18n="chatKeyNote">
+                    Your API key is stored securely in your browser's local storage. We never see or store your key on our servers.
+                </p>
+            </div>
+        </div>
+
+        <!-- Chat Section -->
+        <div id="chat-section" class="chat-container" style="display: none;">
+            <div class="chat-header">
+                <h2 data-i18n="chatTitle">Islamic Knowledge Assistant</h2>
+                <p data-i18n="chatSubtitle">Ask any question about Islam - Quran, Hadith, practices, and more</p>
+                <button id="clear-key-btn" style="background: transparent; border: 1px solid white; color: white; padding: 0.25rem 0.75rem; border-radius: 4px; cursor: pointer; font-size: 0.8rem; margin-top: 0.5rem;" data-i18n="chatChangeKey">
+                    Change API Key
+                </button>
+            </div>
+
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+
+            <div id="suggested-questions">
+                <!-- Suggested questions will be loaded here -->
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" data-i18n-placeholder="chatPlaceholder" placeholder="Type your question about Islam..." autocomplete="off">
+                <button id="send-btn" data-i18n="chatSend">Send</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="padding: 1rem;">
+        <div class="footer-links" style="margin-bottom: 0.5rem;">
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="quran.html" data-i18n="navQuran">Quran</a>
+            <a href="hadith.html" data-i18n="navHadith">Hadith</a>
+            <a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a>
+        </div>
+        <p style="font-size: 0.9rem;" data-i18n="footerMade">Made with love for the sake of Allah</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/chat.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langNav = document.getElementById('lang-selector-nav');
+            if (langNav) {
+                langNav.innerHTML = createLanguageSelector();
+            }
+        });
+    </script>
+</body>
+</html>

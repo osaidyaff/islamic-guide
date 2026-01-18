@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadith Library - Islamic Guidance</title>
+    <meta name="description" content="Comprehensive collection of authentic Hadith with full references, narrators, and sources.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .arabic-font { font-family: 'Amiri', 'Traditional Arabic', serif; }
+        .language-selector {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .language-selector option {
+            background: var(--dark-green);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body class="pattern-bg">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="arabic" style="font-size: 1.5rem;">&#x262A;</span>
+                <h1>Islamic Guidance</h1>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="navHome">Home</a></li>
+                <li><a href="chat.html" data-i18n="navAskAi">Ask AI</a></li>
+                <li><a href="journey.html" data-i18n="navJourney">Your Journey</a></li>
+                <li><a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a></li>
+                <li><a href="quran.html" data-i18n="navQuran">Quran</a></li>
+                <li><a href="hadith.html" class="active" data-i18n="navHadith">Hadith</a></li>
+            </ul>
+            <div id="lang-selector-nav"></div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="padding: 2rem;">
+        <div class="hero-content">
+            <p class="bismillah arabic-font" style="font-size: 2rem;">وَمَا يَنطِقُ عَنِ الْهَوَىٰ إِنْ هُوَ إِلَّا وَحْيٌ يُوحَىٰ</p>
+            <p style="font-style: italic;">"Nor does he speak from his own desire. It is only a revelation revealed."</p>
+            <p style="color: var(--gold);">Surah An-Najm 53:3-4</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-i18n="hadithTitle">Hadith Library</h2>
+                <p data-i18n="hadithSubtitle">Authentic sayings of Prophet Muhammad (peace be upon him) with full references</p>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="quran-search" style="margin-bottom: 2rem;">
+                <div class="search-row">
+                    <input type="text" id="hadith-search" data-i18n-placeholder="hadithSearch" placeholder="Search hadith by text, narrator, or source..." style="flex: 2;">
+                    <select id="category-filter">
+                        <option value="" data-i18n="hadithAll">All Categories</option>
+                        <option value="faith" data-i18n="hadithFaith">Faith & Belief</option>
+                        <option value="worship" data-i18n="hadithWorship">Worship</option>
+                        <option value="character" data-i18n="hadithCharacter">Character & Manners</option>
+                        <option value="family" data-i18n="hadithFamily">Family & Relations</option>
+                        <option value="society" data-i18n="hadithSociety">Society & Justice</option>
+                        <option value="knowledge" data-i18n="hadithKnowledge">Knowledge & Learning</option>
+                        <option value="daily" data-i18n="hadithDaily">Daily Life</option>
+                        <option value="hereafter" data-i18n="hadithHereafter">Hereafter</option>
+                    </select>
+                </div>
+                <p id="results-count" style="text-align: center; margin-top: 1rem; color: var(--text-light);"></p>
+            </div>
+
+            <!-- Hadith Container -->
+            <div id="hadith-container">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <span>Loading hadith collection...</span>
+                </div>
+            </div>
+
+            <!-- About Hadith Section -->
+            <div style="margin-top: 3rem;">
+                <div class="section-title">
+                    <h2 data-i18n="hadithUnderstanding">Understanding Hadith</h2>
+                    <p data-i18n="hadithUnderstandingDesc">The second source of Islamic guidance after the Quran</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary-green), var(--light-green)); font-size: 1.5rem;">
+                            <span style="font-family: serif;">H</span>
+                        </div>
+                        <h3>What is Hadith?</h3>
+                        <p>Hadith are the recorded sayings, actions, and approvals of Prophet Muhammad (peace be upon him). They provide practical guidance on how to implement the teachings of the Quran in daily life.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary-green), var(--light-green)); font-size: 1.5rem;">
+                            <span style="font-family: serif;">S</span>
+                        </div>
+                        <h3>Hadith Sciences</h3>
+                        <p>Islamic scholars developed rigorous sciences to verify hadith authenticity, examining the chain of narrators (isnad) and the text (matn). Grades include Sahih (authentic), Hasan (good), and Da'if (weak).</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary-green), var(--light-green)); font-size: 1.5rem;">
+                            <span style="font-family: serif;">6</span>
+                        </div>
+                        <h3>The Six Books</h3>
+                        <p>The most authentic collections are: Sahih Al-Bukhari, Sahih Muslim, Sunan Abu Dawud, Jami At-Tirmidhi, Sunan An-Nasai, and Sunan Ibn Majah. These are known as the "Kutub al-Sittah."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Major Collections -->
+            <div style="margin-top: 3rem;">
+                <div class="section-title">
+                    <h2 data-i18n="hadithCollections">Major Hadith Collections</h2>
+                </div>
+
+                <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="card" style="text-align: left;">
+                        <h3 style="color: var(--primary-green);">Sahih Al-Bukhari</h3>
+                        <p><strong>Compiler:</strong> Imam Muhammad al-Bukhari (810-870 CE)</p>
+                        <p><strong>Hadiths:</strong> 7,275 with repetitions (2,602 unique)</p>
+                        <p style="margin-top: 0.5rem; color: var(--text-light);">Considered the most authentic hadith collection. Imam Bukhari spent 16 years compiling it.</p>
+                    </div>
+
+                    <div class="card" style="text-align: left;">
+                        <h3 style="color: var(--primary-green);">Sahih Muslim</h3>
+                        <p><strong>Compiler:</strong> Imam Muslim ibn al-Hajjaj (815-875 CE)</p>
+                        <p><strong>Hadiths:</strong> 7,500 with repetitions (3,033 unique)</p>
+                        <p style="margin-top: 0.5rem; color: var(--text-light);">Second most authentic collection. Known for its excellent organization.</p>
+                    </div>
+
+                    <div class="card" style="text-align: left;">
+                        <h3 style="color: var(--primary-green);">Sunan Abu Dawud</h3>
+                        <p><strong>Compiler:</strong> Imam Abu Dawud (817-889 CE)</p>
+                        <p><strong>Hadiths:</strong> 4,800</p>
+                        <p style="margin-top: 0.5rem; color: var(--text-light);">Focuses on legal rulings and jurisprudence matters.</p>
+                    </div>
+
+                    <div class="card" style="text-align: left;">
+                        <h3 style="color: var(--primary-green);">Jami At-Tirmidhi</h3>
+                        <p><strong>Compiler:</strong> Imam At-Tirmidhi (824-892 CE)</p>
+                        <p><strong>Hadiths:</strong> 3,956</p>
+                        <p style="margin-top: 0.5rem; color: var(--text-light);">Includes grading of each hadith and legal opinions of scholars.</p>
+                    </div>
+
+                    <div class="card" style="text-align: left;">
+                        <h3 style="color: var(--primary-green);">Sunan An-Nasai</h3>
+                        <p><strong>Compiler:</strong> Imam An-Nasai (829-915 CE)</p>
+                        <p><strong>Hadiths:</strong> 5,270</p>
+                        <p style="margin-top: 0.5rem; color: var(--text-light);">Known for strict criteria in selecting narrators.</p>
+                    </div>
+
+                    <div class="card" style="text-align: left;">
+                        <h3 style="color: var(--primary-green);">Sunan Ibn Majah</h3>
+                        <p><strong>Compiler:</strong> Imam Ibn Majah (824-887 CE)</p>
+                        <p><strong>Hadiths:</strong> 4,341</p>
+                        <p style="margin-top: 0.5rem; color: var(--text-light);">Completes the six major collections with unique hadiths.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="bismillah arabic-font">الحمد لله رب العالمين</p>
+        <p>All praise is due to Allah, Lord of all the worlds</p>
+        <div class="footer-links">
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="chat.html" data-i18n="navAskAi">Ask AI</a>
+            <a href="journey.html" data-i18n="navJourney">Journey</a>
+            <a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a>
+            <a href="quran.html" data-i18n="navQuran">Quran</a>
+            <a href="hadith.html" data-i18n="navHadith">Hadith</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/hadith.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add language selector
+            const langNav = document.getElementById('lang-selector-nav');
+            if (langNav) {
+                langNav.innerHTML = createLanguageSelector();
+            }
+
+            // Initialize hadith library
+            new HadithLibrary();
+        });
+    </script>
+</body>
+</html>

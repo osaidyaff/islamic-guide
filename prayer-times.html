@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Times - Islamic Guidance</title>
+    <meta name="description" content="Get accurate Islamic prayer times for your location. Fajr, Dhuhr, Asr, Maghrib, Isha times and Qibla direction.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .arabic-font { font-family: 'Amiri', 'Traditional Arabic', serif; }
+        .language-selector {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .language-selector option {
+            background: var(--dark-green);
+            color: var(--white);
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--white);
+            font-family: 'Amiri', serif;
+        }
+    </style>
+</head>
+<body class="pattern-bg">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="arabic" style="font-size: 1.5rem;">&#x262A;</span>
+                <h1>Islamic Guidance</h1>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="navHome">Home</a></li>
+                <li><a href="chat.html" data-i18n="navAskAi">Ask AI</a></li>
+                <li><a href="journey.html" data-i18n="navJourney">Your Journey</a></li>
+                <li><a href="prayer-times.html" class="active" data-i18n="navPrayerTimes">Prayer Times</a></li>
+                <li><a href="quran.html" data-i18n="navQuran">Quran</a></li>
+                <li><a href="hadith.html" data-i18n="navHadith">Hadith</a></li>
+            </ul>
+            <div id="lang-selector-nav"></div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="padding: 2rem;">
+        <div class="hero-content">
+            <p class="bismillah arabic-font" style="font-size: 2rem;">إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا</p>
+            <p style="font-style: italic;">"Indeed, prayer has been decreed upon the believers a decree of specified times."</p>
+            <p style="color: var(--gold);">Surah An-Nisa 4:103</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Location Info -->
+            <div id="location-info" class="location-info">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <span>Getting your location...</span>
+                </div>
+            </div>
+
+            <!-- Date Display -->
+            <div id="date-display"></div>
+
+            <!-- Prayer Times Grid -->
+            <div id="prayer-grid" class="prayer-grid">
+                <!-- Prayer times will be loaded here -->
+            </div>
+
+            <!-- Prayer Information -->
+            <div style="margin-top: 3rem;">
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="icon-circle">
+                            <span style="font-size: 1.5rem;">&#x262A;</span>
+                        </div>
+                        <h3 data-i18n="prayerImportance">The Importance of Salah</h3>
+                        <p data-i18n="prayerImportanceDesc">Prayer is the second pillar of Islam and was the first act of worship made obligatory. The Prophet Muhammad (peace be upon him) said: "The first matter that the slave will be brought to account for on the Day of Judgment is the prayer."</p>
+                        <p style="margin-top: 1rem;">Prayer is a direct connection between the worshipper and Allah - no intermediaries needed.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon-circle">
+                            <span style="font-family: 'Amiri', serif;">٥</span>
+                        </div>
+                        <h3 data-i18n="prayerFiveTitle">The Five Daily Prayers</h3>
+                        <ul style="text-align: left; padding-left: 1.5rem;">
+                            <li><strong>Fajr</strong> - 2 units - Before sunrise</li>
+                            <li><strong>Dhuhr</strong> - 4 units - After midday</li>
+                            <li><strong>Asr</strong> - 4 units - Late afternoon</li>
+                            <li><strong>Maghrib</strong> - 3 units - After sunset</li>
+                            <li><strong>Isha</strong> - 4 units - Night prayer</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- How to Pray Section -->
+            <div style="margin-top: 3rem;">
+                <div class="section-title">
+                    <h2 data-i18n="prayerNewTitle">New to Prayer?</h2>
+                    <p data-i18n="prayerNewDesc">Learning to pray is a beautiful journey</p>
+                </div>
+
+                <div class="featured-verse" style="background: var(--white); color: var(--text-dark);">
+                    <h3 style="color: var(--primary-green); margin-bottom: 1rem;" data-i18n="prayerStepsTitle">Basic Steps of Prayer</h3>
+                    <ol style="text-align: left; max-width: 600px; margin: 0 auto; line-height: 2;">
+                        <li><strong>Make Wudu (Ablution)</strong> - Ritual washing before prayer</li>
+                        <li><strong>Face the Qibla</strong> - Direction of the Kaaba</li>
+                        <li><strong>Make Intention (Niyyah)</strong> - In your heart</li>
+                        <li><strong>Say "Allahu Akbar"</strong> - Begin the prayer</li>
+                        <li><strong>Recite Surah Al-Fatiha</strong> - The opening chapter</li>
+                        <li><strong>Perform Ruku (Bowing)</strong> - Bow with hands on knees</li>
+                        <li><strong>Perform Sujud (Prostration)</strong> - Place forehead on ground</li>
+                        <li><strong>Complete the prayer</strong> - With Tashahhud and Salam</li>
+                    </ol>
+                    <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-light);">
+                        Don't worry about perfection - start slowly and learn gradually. Allah values your sincere effort.
+                    </p>
+                    <a href="chat.html" class="btn btn-primary mt-3" data-i18n="prayerHelp">Ask AI for Help Learning Prayer</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="bismillah arabic-font">الحمد لله رب العالمين</p>
+        <p>All praise is due to Allah, Lord of all the worlds</p>
+        <div class="footer-links">
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="chat.html" data-i18n="navAskAi">Ask AI</a>
+            <a href="journey.html" data-i18n="navJourney">Journey</a>
+            <a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a>
+            <a href="quran.html" data-i18n="navQuran">Quran</a>
+            <a href="hadith.html" data-i18n="navHadith">Hadith</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/prayer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langNav = document.getElementById('lang-selector-nav');
+            if (langNav) {
+                langNav.innerHTML = createLanguageSelector();
+            }
+        });
+    </script>
+</body>
+</html>
