@@ -424,7 +424,46 @@ class QuranReader {
         if (this.surahSelect) this.surahSelect.value = random.surah;
         if (this.ayahInput) this.ayahInput.value = random.ayah;
 
-        await this.fetchVerse(random.surah, random.ayah);
+        try {
+            await this.fetchVerse(random.surah, random.ayah);
+        } catch (error) {
+            console.error('Error loading random verse:', error);
+            // Show a fallback verse if API fails
+            this.showFallbackVerse();
+        }
+    }
+
+    showFallbackVerse() {
+        if (!this.verseDisplay) return;
+
+        // Show a pre-loaded verse if API fails
+        this.verseDisplay.innerHTML = `
+            <p class="surah-name">Al-Fatihah (The Opening)</p>
+            <p class="arabic-text" style="font-family: 'Amiri', serif; font-size: 2rem; line-height: 2;">
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+                الرَّحْمَٰنِ الرَّحِيمِ
+                مَالِكِ يَوْمِ الدِّينِ
+                إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ
+                اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ
+                صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
+            </p>
+            <p class="translation-text">
+                "In the name of Allah, the Most Gracious, the Most Merciful.
+                All praise is due to Allah, Lord of the worlds.
+                The Most Gracious, the Most Merciful.
+                Master of the Day of Judgment.
+                You alone we worship, and You alone we ask for help.
+                Guide us to the straight path.
+                The path of those upon whom You have bestowed favor, not of those who have earned anger or of those who are astray."
+            </p>
+            <p class="verse-reference">Surah Al-Fatihah 1:1-7</p>
+            <p style="margin-top: 1rem; padding: 1rem; background: var(--cream); border-radius: 8px; color: var(--text-light); font-size: 0.9rem;">
+                Note: Unable to connect to Quran API. Please check your internet connection and try again.
+                <br><br>
+                <button onclick="window.quranReader?.loadRandomVerse()" class="btn btn-primary" style="margin-top: 0.5rem;">Try Again</button>
+            </p>
+        `;
     }
 
     async loadPreviousVerse() {
