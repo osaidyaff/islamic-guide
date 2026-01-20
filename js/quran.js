@@ -403,7 +403,12 @@ class QuranReader {
         this.currentAyah = ayah;
         this.viewMode = 'verse';
 
-        await this.fetchVerse(surah, ayah);
+        try {
+            await this.fetchVerse(surah, ayah);
+        } catch (error) {
+            console.error('Error loading specific verse:', error);
+            this.showFallbackVerse();
+        }
     }
 
     async loadRandomVerse() {
@@ -486,7 +491,12 @@ class QuranReader {
         if (this.surahSelect) this.surahSelect.value = this.currentSurah;
         if (this.ayahInput) this.ayahInput.value = this.currentAyah;
 
-        await this.fetchVerse(this.currentSurah, this.currentAyah);
+        try {
+            await this.fetchVerse(this.currentSurah, this.currentAyah);
+        } catch (error) {
+            console.error('Error loading previous verse:', error);
+            this.showFallbackVerse();
+        }
     }
 
     async loadNextVerse() {
@@ -511,7 +521,12 @@ class QuranReader {
         if (this.surahSelect) this.surahSelect.value = this.currentSurah;
         if (this.ayahInput) this.ayahInput.value = this.currentAyah;
 
-        await this.fetchVerse(this.currentSurah, this.currentAyah);
+        try {
+            await this.fetchVerse(this.currentSurah, this.currentAyah);
+        } catch (error) {
+            console.error('Error loading next verse:', error);
+            this.showFallbackVerse();
+        }
     }
 
     async fetchVerse(surah, ayah) {
@@ -535,7 +550,8 @@ class QuranReader {
             }
         } catch (error) {
             console.error('Quran API error:', error);
-            Utils.showError(this.verseDisplay, 'Could not load verse. Please try again.');
+            // Re-throw so calling functions can handle with fallback
+            throw error;
         }
     }
 
