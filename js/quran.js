@@ -1,6 +1,18 @@
 // Islamic Guidance - Enhanced Quran Reader with Research & Analysis
 // Using Al-Quran Cloud API and additional tafsir resources
 
+// Fallback Utils if main.js fails to load
+if (typeof Utils === 'undefined') {
+    window.Utils = {
+        showLoading: (element) => {
+            if (element) element.innerHTML = '<div class="loading"><div class="loading-spinner"></div><span>Loading...</span></div>';
+        },
+        showError: (element, message) => {
+            if (element) element.innerHTML = `<div style="text-align: center; padding: 2rem; color: #dc3545;"><p>${message}</p></div>`;
+        }
+    };
+}
+
 // Surah data (name, verses count, revelation type)
 const surahList = [
     { number: 1, name: 'Al-Fatihah', englishName: 'The Opening', verses: 7, type: 'Meccan' },
@@ -532,7 +544,12 @@ class QuranReader {
     async fetchVerse(surah, ayah) {
         if (!this.verseDisplay) return;
 
-        Utils.showLoading(this.verseDisplay);
+        // Show loading state (with fallback if Utils not defined)
+        if (typeof Utils !== 'undefined' && Utils.showLoading) {
+            Utils.showLoading(this.verseDisplay);
+        } else {
+            this.verseDisplay.innerHTML = '<div class="loading"><div class="loading-spinner"></div><span>Loading verse...</span></div>';
+        }
 
         try {
             const [arabicRes, translationRes] = await Promise.all([
