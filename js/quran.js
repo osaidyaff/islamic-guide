@@ -299,9 +299,14 @@ class QuranReader {
         this.prevButton = document.getElementById('prev-btn');
         this.nextButton = document.getElementById('next-btn');
 
+        // Show fallback content immediately while loading
+        this.showFallbackVerse();
+
         this.populateSurahSelect();
         this.bindEvents();
         this.createResearchTools();
+
+        // Try to load from API after showing fallback
         this.loadRandomVerse();
     }
 
@@ -419,7 +424,7 @@ class QuranReader {
             await this.fetchVerse(surah, ayah);
         } catch (error) {
             console.error('Error loading specific verse:', error);
-            this.showFallbackVerse();
+            this.showFallbackVerse(true);
         }
     }
 
@@ -446,40 +451,44 @@ class QuranReader {
         } catch (error) {
             console.error('Error loading random verse:', error);
             // Show a fallback verse if API fails
-            this.showFallbackVerse();
+            this.showFallbackVerse(true);
         }
     }
 
-    showFallbackVerse() {
+    showFallbackVerse(showError = false) {
         if (!this.verseDisplay) return;
 
-        // Show a pre-loaded verse if API fails
-        this.verseDisplay.innerHTML = `
-            <p class="surah-name">Al-Fatihah (The Opening)</p>
-            <p class="arabic-text" style="font-family: 'Amiri', serif; font-size: 2rem; line-height: 2;">
-                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
-                الرَّحْمَٰنِ الرَّحِيمِ
-                مَالِكِ يَوْمِ الدِّينِ
-                إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ
-                اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ
-                صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
-            </p>
-            <p class="translation-text">
-                "In the name of Allah, the Most Gracious, the Most Merciful.
-                All praise is due to Allah, Lord of the worlds.
-                The Most Gracious, the Most Merciful.
-                Master of the Day of Judgment.
-                You alone we worship, and You alone we ask for help.
-                Guide us to the straight path.
-                The path of those upon whom You have bestowed favor, not of those who have earned anger or of those who are astray."
-            </p>
-            <p class="verse-reference">Surah Al-Fatihah 1:1-7</p>
+        const errorMessage = showError ? `
             <p style="margin-top: 1rem; padding: 1rem; background: var(--cream); border-radius: 8px; color: var(--text-light); font-size: 0.9rem;">
                 Note: Unable to connect to Quran API. Please check your internet connection and try again.
                 <br><br>
                 <button onclick="window.quranReader?.loadRandomVerse()" class="btn btn-primary" style="margin-top: 0.5rem;">Try Again</button>
             </p>
+        ` : '';
+
+        // Show a pre-loaded verse
+        this.verseDisplay.innerHTML = `
+            <p class="surah-name" style="color: var(--primary-green); font-size: 1.3rem; font-weight: bold;">Al-Fatihah (The Opening) <span style="font-family: 'Amiri', serif;">الفاتحة</span></p>
+            <p class="arabic-text" style="font-family: 'Amiri', serif; font-size: 2rem; line-height: 2.2; direction: rtl; text-align: center; margin: 1.5rem 0;">
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ<br>
+                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ<br>
+                الرَّحْمَٰنِ الرَّحِيمِ<br>
+                مَالِكِ يَوْمِ الدِّينِ<br>
+                إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ<br>
+                اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ<br>
+                صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
+            </p>
+            <p class="translation-text" style="font-style: italic; line-height: 1.8; max-width: 600px; margin: 0 auto;">
+                "In the name of Allah, the Most Gracious, the Most Merciful.<br>
+                All praise is due to Allah, Lord of the worlds.<br>
+                The Most Gracious, the Most Merciful.<br>
+                Master of the Day of Judgment.<br>
+                You alone we worship, and You alone we ask for help.<br>
+                Guide us to the straight path.<br>
+                The path of those upon whom You have bestowed favor, not of those who have earned anger or of those who are astray."
+            </p>
+            <p class="verse-reference" style="color: var(--gold); margin-top: 1rem;">Surah Al-Fatihah 1:1-7</p>
+            ${errorMessage}
         `;
     }
 
@@ -507,7 +516,7 @@ class QuranReader {
             await this.fetchVerse(this.currentSurah, this.currentAyah);
         } catch (error) {
             console.error('Error loading previous verse:', error);
-            this.showFallbackVerse();
+            this.showFallbackVerse(true);
         }
     }
 
@@ -537,7 +546,7 @@ class QuranReader {
             await this.fetchVerse(this.currentSurah, this.currentAyah);
         } catch (error) {
             console.error('Error loading next verse:', error);
-            this.showFallbackVerse();
+            this.showFallbackVerse(true);
         }
     }
 
