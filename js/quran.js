@@ -131,8 +131,8 @@ const surahList = [
     { number: 114, name: 'An-Nas', englishName: 'Mankind', verses: 6, type: 'Meccan' }
 ];
 
-// Available translations
-const translations = {
+// Available Quran translations (renamed to avoid conflict with translations.js)
+const quranTranslations = {
     'en.sahih': { name: 'Sahih International', lang: 'English' },
     'en.pickthall': { name: 'Pickthall', lang: 'English' },
     'en.yusufali': { name: 'Yusuf Ali', lang: 'English' },
@@ -752,7 +752,7 @@ class QuranReader {
             let comparisonsHTML = '';
             for (let i = 1; i < data.length; i++) {
                 const translation = data[i].data;
-                const translationInfo = translations[translationKeys[i-1]];
+                const translationInfo = quranTranslations[translationKeys[i-1]];
                 comparisonsHTML += `
                     <div style="padding: 1rem; background: var(--cream); border-radius: 8px; margin-bottom: 1rem;">
                         <h4 style="color: var(--primary-green); margin-bottom: 0.5rem;">${translationInfo.name}</h4>
