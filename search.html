@@ -160,21 +160,21 @@
     <main class="section">
         <div class="container">
             <div class="search-container">
-                <h2 style="color: var(--primary-green); text-align: center; margin-bottom: 1.5rem;">
+                <h2 style="color: var(--primary-green); text-align: center; margin-bottom: 1.5rem;" data-i18n="searchTitle">
                     Search Hadith Collection
                 </h2>
 
                 <div class="search-box">
-                    <input type="text" id="search-input" placeholder="Search for keywords..." autofocus>
-                    <button id="search-btn">Search</button>
+                    <input type="text" id="search-input" placeholder="Search for keywords..." data-i18n-placeholder="searchPlaceholder" autofocus>
+                    <button id="search-btn" data-i18n="searchBtn">Search</button>
                 </div>
 
                 <div id="search-stats" class="search-stats" style="display: none;"></div>
 
                 <div id="results-container" class="results-container">
                     <div class="no-results">
-                        <p style="font-size: 1.2rem; margin-bottom: 1rem;">Enter a keyword to search</p>
-                        <p>Try searching for: prayer, mercy, patience, forgiveness, paradise</p>
+                        <p style="font-size: 1.2rem; margin-bottom: 1rem;" data-i18n="searchPrompt">Enter a keyword to search</p>
+                        <p data-i18n="searchHint">Try searching for: prayer, mercy, patience, forgiveness, paradise</p>
                     </div>
                 </div>
             </div>
@@ -191,7 +191,7 @@
             <a href="journey.html" data-i18n="navJourney">Journey</a>
             <a href="prayer-times.html" data-i18n="navPrayerTimes">Prayer Times</a>
             <a href="hadith.html" data-i18n="navHadith">Hadith</a>
-            <a href="feedback.html" style="color: var(--light-gold);">Feedback</a>
+            <a href="feedback.html" style="color: var(--light-gold);" data-i18n="feedback">Feedback</a>
         </div>
     </footer>
 
@@ -225,7 +225,7 @@
                 resultsContainer.innerHTML = `
                     <div class="loading" style="padding: 3rem;">
                         <div class="loading-spinner"></div>
-                        <span>Searching...</span>
+                        <span>${window.langManager.t('searching')}</span>
                     </div>
                 `;
 
@@ -264,8 +264,8 @@
                 if (results.length === 0) {
                     resultsContainer.innerHTML = `
                         <div class="no-results">
-                            <p style="font-size: 1.2rem; margin-bottom: 1rem;">No results found</p>
-                            <p>Try different keywords or check your spelling.</p>
+                            <p style="font-size: 1.2rem; margin-bottom: 1rem;">${window.langManager.t('noResults')}</p>
+                            <p>${window.langManager.t('noResultsHint')}</p>
                         </div>
                     `;
                     return;

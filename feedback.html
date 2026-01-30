@@ -150,8 +150,8 @@
     <section class="hero" style="padding: 2rem;">
         <div class="hero-content">
             <p class="bismillah arabic-font" style="font-size: 2rem;">نحن نستمع إليك</p>
-            <h2>Share Your Feedback</h2>
-            <p>Your thoughts help us improve and serve the community better</p>
+            <h2 data-i18n="feedbackTitle">Share Your Feedback</h2>
+            <p data-i18n="feedbackSubtitle">Your thoughts help us improve and serve the community better</p>
         </div>
     </section>
 
@@ -159,7 +159,7 @@
     <main class="section">
         <div class="container">
             <div id="feedback-form-container" class="feedback-form">
-                <h3 style="color: var(--primary-green); text-align: center; margin-bottom: 1.5rem;">
+                <h3 style="color: var(--primary-green); text-align: center; margin-bottom: 1.5rem;" data-i18n="feedbackFormTitle">
                     We'd Love to Hear From You
                 </h3>
 
@@ -174,38 +174,38 @@
                     <input type="hidden" name="_subject" value="New Feedback from Islamic Guidance Website">
 
                     <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        <label for="name" data-i18n="labelName">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" data-i18n-placeholder="placeholderName" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        <label for="email" data-i18n="labelEmail">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" data-i18n-placeholder="placeholderEmail" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="type">Feedback Type</label>
+                        <label for="type" data-i18n="labelType">Feedback Type</label>
                         <select id="type" name="type" required>
-                            <option value="">Select a type...</option>
-                            <option value="suggestion">Suggestion</option>
-                            <option value="question">Question about Islam</option>
-                            <option value="bug">Report a Problem</option>
-                            <option value="appreciation">Appreciation</option>
-                            <option value="content">Content Correction</option>
-                            <option value="other">Other</option>
+                            <option value="" data-i18n="selectType">Select a type...</option>
+                            <option value="suggestion" data-i18n="typeSuggestion">Suggestion</option>
+                            <option value="question" data-i18n="typeQuestion">Question about Islam</option>
+                            <option value="bug" data-i18n="typeBug">Report a Problem</option>
+                            <option value="appreciation" data-i18n="typeAppreciation">Appreciation</option>
+                            <option value="content" data-i18n="typeContent">Content Correction</option>
+                            <option value="other" data-i18n="typeOther">Other</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" placeholder="Share your thoughts, suggestions, or questions..." required></textarea>
+                        <label for="message" data-i18n="labelMessage">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Share your thoughts, suggestions, or questions..." data-i18n-placeholder="placeholderMessage" required></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Send Feedback</button>
+                    <button type="submit" class="submit-btn" data-i18n="sendFeedback">Send Feedback</button>
                 </form>
 
                 <div class="contact-info">
-                    <p style="color: var(--text-light);">You can also reach us directly:</p>
+                    <p style="color: var(--text-light);" data-i18n="contactDirect">You can also reach us directly:</p>
                     <p style="margin-top: 0.5rem;">
                         <a href="mailto:osaidyaff@gmail.com" style="color: var(--primary-green); font-weight: 600;">
                             osaidyaff@gmail.com
@@ -224,12 +224,12 @@
 
             <div id="success-message" class="feedback-form success-message">
                 <div style="font-size: 4rem; margin-bottom: 1rem;">&#x2714;</div>
-                <h3>JazakAllahu Khayran!</h3>
+                <h3 data-i18n="thankYou">JazakAllahu Khayran!</h3>
                 <p class="arabic-font" style="font-size: 1.3rem; color: var(--gold); margin-bottom: 1rem;">جزاك الله خيراً</p>
-                <p style="color: var(--text-light); margin-bottom: 2rem;">
+                <p style="color: var(--text-light); margin-bottom: 2rem;" data-i18n="thankYouMsg">
                     Thank you for your feedback! May Allah reward you for helping us improve.
                 </p>
-                <a href="index.html" class="btn btn-primary">Back to Home</a>
+                <a href="index.html" class="btn btn-primary" data-i18n="backHome">Back to Home</a>
             </div>
         </div>
     </main>

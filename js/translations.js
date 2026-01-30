@@ -139,7 +139,55 @@ const translations = {
 
         // Common
         loading: 'Loading...',
-        error: 'An error occurred. Please try again.'
+        error: 'An error occurred. Please try again.',
+
+        // Inner Peace Section
+        innerPeaceTitle: 'Finding Inner Peace',
+        innerPeaceDesc: 'Islam offers timeless wisdom for tranquility in a chaotic world',
+        rememberCreator: 'Remember Your Creator',
+        trustAllah: "Trust in Allah's Plan",
+        gratitudeTransforms: 'Gratitude Transforms',
+
+        // Share Section
+        shareResource: 'Share this resource with others:',
+
+        // Footer Links
+        search: 'Search',
+        feedback: 'Feedback',
+
+        // Feedback Page
+        feedbackTitle: 'Share Your Feedback',
+        feedbackSubtitle: 'Your thoughts help us improve and serve the community better',
+        feedbackFormTitle: "We'd Love to Hear From You",
+        labelName: 'Your Name',
+        labelEmail: 'Email Address',
+        labelType: 'Feedback Type',
+        labelMessage: 'Your Message',
+        placeholderName: 'Enter your name',
+        placeholderEmail: 'your@email.com',
+        placeholderMessage: 'Share your thoughts, suggestions, or questions...',
+        selectType: 'Select a type...',
+        typeSuggestion: 'Suggestion',
+        typeQuestion: 'Question about Islam',
+        typeBug: 'Report a Problem',
+        typeAppreciation: 'Appreciation',
+        typeContent: 'Content Correction',
+        typeOther: 'Other',
+        sendFeedback: 'Send Feedback',
+        contactDirect: 'You can also reach us directly:',
+        thankYou: 'JazakAllahu Khayran!',
+        thankYouMsg: 'Thank you for your feedback! May Allah reward you for helping us improve.',
+        backHome: 'Back to Home',
+
+        // Search Page
+        searchTitle: 'Search Hadith Collection',
+        searchPlaceholder: 'Search for keywords...',
+        searchBtn: 'Search',
+        searchPrompt: 'Enter a keyword to search',
+        searchHint: 'Try searching for: prayer, mercy, patience, forgiveness, paradise',
+        noResults: 'No results found',
+        noResultsHint: 'Try different keywords or check your spelling.',
+        searching: 'Searching...'
     },
 
     ar: {
@@ -280,7 +328,55 @@ const translations = {
 
         // Common
         loading: 'جارٍ التحميل...',
-        error: 'حدث خطأ. يرجى المحاولة مرة أخرى.'
+        error: 'حدث خطأ. يرجى المحاولة مرة أخرى.',
+
+        // Inner Peace Section
+        innerPeaceTitle: 'إيجاد السلام الداخلي',
+        innerPeaceDesc: 'يقدم الإسلام حكمة خالدة للطمأنينة في عالم فوضوي',
+        rememberCreator: 'تذكر خالقك',
+        trustAllah: 'توكل على الله',
+        gratitudeTransforms: 'الشكر يحول الحياة',
+
+        // Share Section
+        shareResource: 'شارك هذا المورد مع الآخرين:',
+
+        // Footer Links
+        search: 'بحث',
+        feedback: 'ملاحظات',
+
+        // Feedback Page
+        feedbackTitle: 'شارك ملاحظاتك',
+        feedbackSubtitle: 'أفكارك تساعدنا على التحسين وخدمة المجتمع بشكل أفضل',
+        feedbackFormTitle: 'يسعدنا سماعك',
+        labelName: 'اسمك',
+        labelEmail: 'البريد الإلكتروني',
+        labelType: 'نوع الملاحظة',
+        labelMessage: 'رسالتك',
+        placeholderName: 'أدخل اسمك',
+        placeholderEmail: 'بريدك@example.com',
+        placeholderMessage: 'شارك أفكارك أو اقتراحاتك أو أسئلتك...',
+        selectType: 'اختر نوعاً...',
+        typeSuggestion: 'اقتراح',
+        typeQuestion: 'سؤال عن الإسلام',
+        typeBug: 'الإبلاغ عن مشكلة',
+        typeAppreciation: 'تقدير',
+        typeContent: 'تصحيح المحتوى',
+        typeOther: 'أخرى',
+        sendFeedback: 'إرسال الملاحظات',
+        contactDirect: 'يمكنك أيضاً التواصل معنا مباشرة:',
+        thankYou: 'جزاك الله خيراً!',
+        thankYouMsg: 'شكراً على ملاحظاتك! جزاك الله خيراً على مساعدتنا في التحسين.',
+        backHome: 'العودة للرئيسية',
+
+        // Search Page
+        searchTitle: 'البحث في مجموعة الأحاديث',
+        searchPlaceholder: 'ابحث عن كلمات...',
+        searchBtn: 'بحث',
+        searchPrompt: 'أدخل كلمة للبحث',
+        searchHint: 'جرب البحث عن: صلاة، رحمة، صبر، مغفرة، جنة',
+        noResults: 'لا توجد نتائج',
+        noResultsHint: 'جرب كلمات مختلفة أو تحقق من الإملاء.',
+        searching: 'جارٍ البحث...'
     },
 
     fr: {
@@ -421,7 +517,55 @@ const translations = {
 
         // Common
         loading: 'Chargement...',
-        error: 'Une erreur s\'est produite.'
+        error: 'Une erreur s\'est produite.',
+
+        // Inner Peace Section
+        innerPeaceTitle: 'Trouver la Paix Intérieure',
+        innerPeaceDesc: "L'Islam offre une sagesse intemporelle pour la tranquillité dans un monde chaotique",
+        rememberCreator: 'Souvenez-vous de Votre Créateur',
+        trustAllah: "Faites Confiance au Plan d'Allah",
+        gratitudeTransforms: 'La Gratitude Transforme',
+
+        // Share Section
+        shareResource: 'Partagez cette ressource avec d\'autres:',
+
+        // Footer Links
+        search: 'Rechercher',
+        feedback: 'Commentaires',
+
+        // Feedback Page
+        feedbackTitle: 'Partagez Vos Commentaires',
+        feedbackSubtitle: 'Vos pensées nous aident à améliorer et mieux servir la communauté',
+        feedbackFormTitle: 'Nous Serions Ravis de Vous Entendre',
+        labelName: 'Votre Nom',
+        labelEmail: 'Adresse Email',
+        labelType: 'Type de Commentaire',
+        labelMessage: 'Votre Message',
+        placeholderName: 'Entrez votre nom',
+        placeholderEmail: 'votre@email.com',
+        placeholderMessage: 'Partagez vos pensées, suggestions ou questions...',
+        selectType: 'Sélectionnez un type...',
+        typeSuggestion: 'Suggestion',
+        typeQuestion: "Question sur l'Islam",
+        typeBug: 'Signaler un Problème',
+        typeAppreciation: 'Appréciation',
+        typeContent: 'Correction de Contenu',
+        typeOther: 'Autre',
+        sendFeedback: 'Envoyer les Commentaires',
+        contactDirect: 'Vous pouvez aussi nous contacter directement:',
+        thankYou: 'JazakAllahu Khayran!',
+        thankYouMsg: "Merci pour vos commentaires! Qu'Allah vous récompense pour nous aider à améliorer.",
+        backHome: "Retour à l'Accueil",
+
+        // Search Page
+        searchTitle: 'Rechercher dans la Collection de Hadiths',
+        searchPlaceholder: 'Rechercher des mots-clés...',
+        searchBtn: 'Rechercher',
+        searchPrompt: 'Entrez un mot-clé pour rechercher',
+        searchHint: 'Essayez: prière, miséricorde, patience, pardon, paradis',
+        noResults: 'Aucun résultat trouvé',
+        noResultsHint: 'Essayez différents mots-clés ou vérifiez votre orthographe.',
+        searching: 'Recherche en cours...'
     },
 
     ur: {
@@ -562,7 +706,55 @@ const translations = {
 
         // Common
         loading: 'لوڈ ہو رہا ہے...',
-        error: 'ایک خرابی ہوئی۔'
+        error: 'ایک خرابی ہوئی۔',
+
+        // Inner Peace Section
+        innerPeaceTitle: 'اندرونی سکون حاصل کرنا',
+        innerPeaceDesc: 'اسلام افراتفری کی دنیا میں سکون کے لیے لازوال حکمت پیش کرتا ہے',
+        rememberCreator: 'اپنے خالق کو یاد کریں',
+        trustAllah: 'اللہ کے منصوبے پر بھروسہ کریں',
+        gratitudeTransforms: 'شکر گزاری بدل دیتی ہے',
+
+        // Share Section
+        shareResource: 'اس وسیلے کو دوسروں کے ساتھ شیئر کریں:',
+
+        // Footer Links
+        search: 'تلاش',
+        feedback: 'رائے',
+
+        // Feedback Page
+        feedbackTitle: 'اپنی رائے شیئر کریں',
+        feedbackSubtitle: 'آپ کے خیالات ہمیں بہتر بنانے اور کمیونٹی کی بہتر خدمت کرنے میں مدد کرتے ہیں',
+        feedbackFormTitle: 'ہم آپ سے سننا چاہتے ہیں',
+        labelName: 'آپ کا نام',
+        labelEmail: 'ای میل پتہ',
+        labelType: 'رائے کی قسم',
+        labelMessage: 'آپ کا پیغام',
+        placeholderName: 'اپنا نام درج کریں',
+        placeholderEmail: 'آپ کا@ای میل.com',
+        placeholderMessage: 'اپنے خیالات، تجاویز یا سوالات شیئر کریں...',
+        selectType: 'ایک قسم منتخب کریں...',
+        typeSuggestion: 'تجویز',
+        typeQuestion: 'اسلام کے بارے میں سوال',
+        typeBug: 'مسئلہ کی رپورٹ',
+        typeAppreciation: 'تعریف',
+        typeContent: 'مواد کی تصحیح',
+        typeOther: 'دیگر',
+        sendFeedback: 'رائے بھیجیں',
+        contactDirect: 'آپ براہ راست بھی رابطہ کر سکتے ہیں:',
+        thankYou: 'جزاک اللہ خیراً!',
+        thankYouMsg: 'آپ کی رائے کا شکریہ! اللہ آپ کو بہتری میں مدد کرنے کا اجر دے۔',
+        backHome: 'ہوم پیج پر واپس',
+
+        // Search Page
+        searchTitle: 'احادیث کے مجموعے میں تلاش کریں',
+        searchPlaceholder: 'الفاظ تلاش کریں...',
+        searchBtn: 'تلاش',
+        searchPrompt: 'تلاش کے لیے لفظ درج کریں',
+        searchHint: 'تلاش کریں: نماز، رحمت، صبر، معافی، جنت',
+        noResults: 'کوئی نتیجہ نہیں ملا',
+        noResultsHint: 'مختلف الفاظ آزمائیں یا اپنی ہجے چیک کریں۔',
+        searching: 'تلاش ہو رہی ہے...'
     },
 
     tr: {
@@ -678,7 +870,55 @@ const translations = {
         hadithUnderstandingDesc: 'Kur\'an\'dan sonra ikinci İslami kaynak',
         hadithCollections: 'Büyük Hadis Koleksiyonları',
         loading: 'Yükleniyor...',
-        error: 'Bir hata oluştu.'
+        error: 'Bir hata oluştu.',
+
+        // Inner Peace Section
+        innerPeaceTitle: 'İç Huzuru Bulmak',
+        innerPeaceDesc: 'İslam kaotik bir dünyada huzur için zamansız bilgelik sunar',
+        rememberCreator: 'Yaratıcınızı Hatırlayın',
+        trustAllah: "Allah'ın Planına Güvenin",
+        gratitudeTransforms: 'Şükür Dönüştürür',
+
+        // Share Section
+        shareResource: 'Bu kaynağı başkalarıyla paylaşın:',
+
+        // Footer Links
+        search: 'Ara',
+        feedback: 'Geri Bildirim',
+
+        // Feedback Page
+        feedbackTitle: 'Geri Bildiriminizi Paylaşın',
+        feedbackSubtitle: 'Düşünceleriniz geliştirmemize ve topluluğa daha iyi hizmet etmemize yardımcı olur',
+        feedbackFormTitle: 'Sizden Duymak İsteriz',
+        labelName: 'Adınız',
+        labelEmail: 'E-posta Adresi',
+        labelType: 'Geri Bildirim Türü',
+        labelMessage: 'Mesajınız',
+        placeholderName: 'Adınızı girin',
+        placeholderEmail: 'email@adresiniz.com',
+        placeholderMessage: 'Düşüncelerinizi, önerilerinizi veya sorularınızı paylaşın...',
+        selectType: 'Bir tür seçin...',
+        typeSuggestion: 'Öneri',
+        typeQuestion: 'İslam Hakkında Soru',
+        typeBug: 'Sorun Bildir',
+        typeAppreciation: 'Takdir',
+        typeContent: 'İçerik Düzeltmesi',
+        typeOther: 'Diğer',
+        sendFeedback: 'Geri Bildirim Gönder',
+        contactDirect: 'Bize doğrudan da ulaşabilirsiniz:',
+        thankYou: 'JazakAllahu Khayran!',
+        thankYouMsg: 'Geri bildiriminiz için teşekkürler! Allah sizi geliştirmemize yardım ettiğiniz için mükafatlandırsın.',
+        backHome: 'Ana Sayfaya Dön',
+
+        // Search Page
+        searchTitle: 'Hadis Koleksiyonunda Ara',
+        searchPlaceholder: 'Anahtar kelimeler ara...',
+        searchBtn: 'Ara',
+        searchPrompt: 'Aramak için bir kelime girin',
+        searchHint: 'Deneyin: namaz, merhamet, sabır, bağışlama, cennet',
+        noResults: 'Sonuç bulunamadı',
+        noResultsHint: 'Farklı kelimeler deneyin veya yazımınızı kontrol edin.',
+        searching: 'Aranıyor...'
     },
 
     id: {
@@ -794,7 +1034,55 @@ const translations = {
         hadithUnderstandingDesc: 'Sumber kedua panduan Islam setelah Al-Quran',
         hadithCollections: 'Koleksi Hadits Utama',
         loading: 'Memuat...',
-        error: 'Terjadi kesalahan.'
+        error: 'Terjadi kesalahan.',
+
+        // Inner Peace Section
+        innerPeaceTitle: 'Menemukan Kedamaian Batin',
+        innerPeaceDesc: 'Islam menawarkan kebijaksanaan abadi untuk ketenangan di dunia yang kacau',
+        rememberCreator: 'Ingatlah Penciptamu',
+        trustAllah: 'Percayalah pada Rencana Allah',
+        gratitudeTransforms: 'Syukur Mengubah Segalanya',
+
+        // Share Section
+        shareResource: 'Bagikan sumber ini dengan yang lain:',
+
+        // Footer Links
+        search: 'Cari',
+        feedback: 'Umpan Balik',
+
+        // Feedback Page
+        feedbackTitle: 'Bagikan Umpan Balik Anda',
+        feedbackSubtitle: 'Pemikiran Anda membantu kami meningkatkan dan melayani komunitas dengan lebih baik',
+        feedbackFormTitle: 'Kami Senang Mendengar dari Anda',
+        labelName: 'Nama Anda',
+        labelEmail: 'Alamat Email',
+        labelType: 'Jenis Umpan Balik',
+        labelMessage: 'Pesan Anda',
+        placeholderName: 'Masukkan nama Anda',
+        placeholderEmail: 'email@anda.com',
+        placeholderMessage: 'Bagikan pemikiran, saran, atau pertanyaan Anda...',
+        selectType: 'Pilih jenis...',
+        typeSuggestion: 'Saran',
+        typeQuestion: 'Pertanyaan tentang Islam',
+        typeBug: 'Laporkan Masalah',
+        typeAppreciation: 'Apresiasi',
+        typeContent: 'Koreksi Konten',
+        typeOther: 'Lainnya',
+        sendFeedback: 'Kirim Umpan Balik',
+        contactDirect: 'Anda juga dapat menghubungi kami langsung:',
+        thankYou: 'JazakAllahu Khayran!',
+        thankYouMsg: 'Terima kasih atas umpan balik Anda! Semoga Allah membalas Anda karena membantu kami meningkatkan.',
+        backHome: 'Kembali ke Beranda',
+
+        // Search Page
+        searchTitle: 'Cari Koleksi Hadits',
+        searchPlaceholder: 'Cari kata kunci...',
+        searchBtn: 'Cari',
+        searchPrompt: 'Masukkan kata kunci untuk mencari',
+        searchHint: 'Coba cari: shalat, kasih sayang, kesabaran, pengampunan, surga',
+        noResults: 'Tidak ada hasil ditemukan',
+        noResultsHint: 'Coba kata kunci berbeda atau periksa ejaan Anda.',
+        searching: 'Mencari...'
     }
 };
 
