@@ -74,6 +74,8 @@ const translations = {
         journeyTitle: 'Begin Your Journey',
         journeyLoading: 'Loading your personalized path to understanding Islam...',
         journeyBack: 'Go Back',
+        journeyRestart: 'Start Over',
+        journeyGoPrayer: 'Go to Prayer Times',
 
         // Prayer Page
         prayerTitle: 'Prayer Times',
@@ -213,6 +215,8 @@ const translations = {
         journeyTitle: 'ابدأ رحلتك',
         journeyLoading: 'جارٍ تحميل مسارك الشخصي لفهم الإسلام...',
         journeyBack: 'رجوع',
+        journeyRestart: 'البدء من جديد',
+        journeyGoPrayer: 'اذهب إلى أوقات الصلاة',
 
         // Prayer Page
         prayerTitle: 'مواقيت الصلاة',
@@ -352,6 +356,8 @@ const translations = {
         journeyTitle: 'Commencez Votre Parcours',
         journeyLoading: 'Chargement de votre chemin personnalisé...',
         journeyBack: 'Retour',
+        journeyRestart: 'Recommencer',
+        journeyGoPrayer: 'Horaires de Prière',
 
         // Prayer Page
         prayerTitle: 'Heures de Prière',
@@ -491,6 +497,8 @@ const translations = {
         journeyTitle: 'اپنا سفر شروع کریں',
         journeyLoading: 'آپ کا ذاتی راستہ لوڈ ہو رہا ہے...',
         journeyBack: 'واپس جائیں',
+        journeyRestart: 'دوبارہ شروع کریں',
+        journeyGoPrayer: 'نماز کے اوقات دیکھیں',
 
         // Prayer Page
         prayerTitle: 'نماز کے اوقات',
@@ -613,6 +621,8 @@ const translations = {
         journeyTitle: 'Yolculuğunuza Başlayın',
         journeyLoading: 'Kişisel yolunuz yükleniyor...',
         journeyBack: 'Geri Dön',
+        journeyRestart: 'Yeniden Başla',
+        journeyGoPrayer: 'Namaz Vakitlerine Git',
         prayerTitle: 'Namaz Vakitleri',
         prayerLocation: 'Konumunuz',
         prayerRefresh: 'Yenile',
@@ -727,6 +737,8 @@ const translations = {
         journeyTitle: 'Mulai Perjalanan Anda',
         journeyLoading: 'Memuat jalur personal Anda...',
         journeyBack: 'Kembali',
+        journeyRestart: 'Mulai Ulang',
+        journeyGoPrayer: 'Lihat Waktu Shalat',
         prayerTitle: 'Waktu Shalat',
         prayerLocation: 'Lokasi Anda',
         prayerRefresh: 'Segarkan',

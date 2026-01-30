@@ -2148,6 +2148,15 @@ class BeliefJourney {
         this.render();
     }
 
+    // Get translated text with fallback
+    getTranslation(key, fallback) {
+        if (typeof window.langManager !== 'undefined') {
+            const text = window.langManager.get(key);
+            if (text && text !== key) return text;
+        }
+        return fallback;
+    }
+
     render() {
         const node = journeyData[this.currentNode];
         if (!node) return;
@@ -2177,8 +2186,12 @@ class BeliefJourney {
 
         let actionButton = '';
         if (node.isEnd && node.action) {
-            actionButton = `<a href="${node.action}" class="btn btn-primary" style="margin-top: 1rem;">Go to Prayer Times</a>`;
+            const prayerText = this.getTranslation('journeyGoPrayer', 'Go to Prayer Times');
+            actionButton = `<a href="${node.action}" class="btn btn-primary" style="margin-top: 1rem;">${prayerText}</a>`;
         }
+
+        const backText = this.getTranslation('journeyBack', 'Go Back');
+        const restartText = this.getTranslation('journeyRestart', 'Start Over');
 
         this.container.innerHTML = `
             <div class="journey-card">
@@ -2192,7 +2205,10 @@ class BeliefJourney {
                     ${optionsHtml}
                 </div>
                 ${actionButton}
-                ${this.history.length > 0 ? '<button class="btn btn-secondary mt-3" id="back-btn">Go Back</button>' : ''}
+                <div class="journey-nav-buttons" style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    ${this.history.length > 0 ? `<button class="btn btn-secondary" id="back-btn">${backText}</button>` : ''}
+                    ${this.history.length > 2 ? `<button class="btn btn-secondary" id="restart-btn">${restartText}</button>` : ''}
+                </div>
             </div>
         `;
 
@@ -2208,6 +2224,12 @@ class BeliefJourney {
         const backBtn = document.getElementById('back-btn');
         if (backBtn) {
             backBtn.addEventListener('click', () => this.goBack());
+        }
+
+        // Bind restart button
+        const restartBtn = document.getElementById('restart-btn');
+        if (restartBtn) {
+            restartBtn.addEventListener('click', () => this.restart());
         }
     }
 
