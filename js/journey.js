@@ -2151,7 +2151,7 @@ class BeliefJourney {
     // Get translated text with fallback
     getTranslation(key, fallback) {
         if (typeof window.langManager !== 'undefined') {
-            const text = window.langManager.get(key);
+            const text = window.langManager.t(key);
             if (text && text !== key) return text;
         }
         return fallback;
