@@ -909,18 +909,39 @@ const journeyData = {
     // Branch: Believes in Prophets
     believes_prophets: {
         id: 'believes_prophets',
-        title: 'Prophets: God\'s Messengers',
-        content: 'Muslims believe in ALL prophets sent by God - including Adam, Noah, Abraham, Moses, and Jesus (peace be upon them all). We believe Muhammad ﷺ is the final prophet, sent with the complete and preserved message.',
+        title: {
+            en: 'Prophets: God\'s Messengers',
+            ar: 'الأنبياء: رسل الله',
+            fr: 'Les Prophètes: Messagers de Dieu',
+            ur: 'انبیاء: اللہ کے رسول',
+            tr: 'Peygamberler: Allah\'ın Elçileri',
+            id: 'Nabi-Nabi: Utusan Allah'
+        },
+        content: {
+            en: 'Muslims believe in ALL prophets sent by God - including Adam, Noah, Abraham, Moses, and Jesus (peace be upon them all). We believe Muhammad ﷺ is the final prophet, sent with the complete and preserved message.',
+            ar: 'يؤمن المسلمون بجميع الأنبياء الذين أرسلهم الله - بما في ذلك آدم ونوح وإبراهيم وموسى وعيسى (عليهم السلام جميعاً). نؤمن أن محمداً ﷺ هو النبي الخاتم، أُرسل بالرسالة الكاملة والمحفوظة.',
+            fr: 'Les Musulmans croient en TOUS les prophètes envoyés par Dieu - y compris Adam, Noé, Abraham, Moïse et Jésus (paix sur eux tous). Nous croyons que Muhammad ﷺ est le dernier prophète, envoyé avec le message complet et préservé.',
+            ur: 'مسلمان اللہ کے بھیجے ہوئے تمام نبیوں پر ایمان رکھتے ہیں - بشمول آدم، نوح، ابراہیم، موسیٰ اور عیسیٰ (ان سب پر سلام)۔ ہم ایمان رکھتے ہیں کہ محمد ﷺ آخری نبی ہیں، جنہیں مکمل اور محفوظ پیغام کے ساتھ بھیجا گیا۔',
+            tr: 'Müslümanlar Allah tarafından gönderilen TÜM peygamberlere inanır - Adem, Nuh, İbrahim, Musa ve İsa dahil (hepsine selam olsun). Muhammed ﷺ\'in eksiksiz ve korunmuş mesajla gönderilen son peygamber olduğuna inanırız.',
+            id: 'Muslim percaya pada SEMUA nabi yang diutus Allah - termasuk Adam, Nuh, Ibrahim, Musa, dan Isa (semoga kedamaian atas mereka semua). Kami percaya Muhammad ﷺ adalah nabi terakhir, diutus dengan pesan yang lengkap dan terpelihara.'
+        },
         verse: {
             arabic: 'آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ مِن رَّبِّهِ وَالْمُؤْمِنُونَ',
-            translation: 'The Messenger has believed in what was revealed to him from his Lord, and so have the believers.',
+            translation: {
+                en: 'The Messenger has believed in what was revealed to him from his Lord, and so have the believers.',
+                ar: 'آمن الرسول بما أنزل إليه من ربه والمؤمنون.',
+                fr: 'Le Messager a cru en ce qui lui a été révélé de son Seigneur, ainsi que les croyants.',
+                ur: 'رسول اس پر ایمان لایا جو اس کے رب کی طرف سے نازل ہوا اور مومنین بھی۔',
+                tr: 'Peygamber Rabbinden kendisine indirilene iman etti, müminler de.',
+                id: 'Rasul telah beriman kepada apa yang diturunkan kepadanya dari Tuhannya, demikian pula orang-orang yang beriman.'
+            },
             reference: 'Surah Al-Baqarah 2:285'
         },
         options: [
-            { label: 'Tell me about Prophet Muhammad ﷺ', next: 'about_muhammad' },
-            { label: 'What about Jesus in Islam?', next: 'jesus_islam' },
-            { label: 'Why is Muhammad the final prophet?', next: 'final_prophet' },
-            { label: 'What about Abraham?', next: 'about_ibrahim' }
+            { label: { en: 'Tell me about Prophet Muhammad ﷺ', ar: 'أخبرني عن النبي محمد ﷺ', fr: 'Parlez-moi du Prophète Muhammad ﷺ', ur: 'مجھے نبی محمد ﷺ کے بارے میں بتائیں', tr: 'Peygamber Muhammed ﷺ hakkında anlat', id: 'Ceritakan tentang Nabi Muhammad ﷺ' }, next: 'about_muhammad' },
+            { label: { en: 'What about Jesus in Islam?', ar: 'ماذا عن عيسى في الإسلام؟', fr: 'Qu\'en est-il de Jésus dans l\'Islam?', ur: 'اسلام میں عیسیٰ کے بارے میں کیا؟', tr: 'İslam\'da İsa hakkında ne dersiniz?', id: 'Bagaimana dengan Isa dalam Islam?' }, next: 'jesus_islam' },
+            { label: { en: 'Why is Muhammad the final prophet?', ar: 'لماذا محمد هو النبي الخاتم؟', fr: 'Pourquoi Muhammad est-il le dernier prophète?', ur: 'محمد آخری نبی کیوں ہیں؟', tr: 'Muhammed neden son peygamber?', id: 'Mengapa Muhammad nabi terakhir?' }, next: 'final_prophet' },
+            { label: { en: 'What about Abraham?', ar: 'ماذا عن إبراهيم؟', fr: 'Qu\'en est-il d\'Abraham?', ur: 'ابراہیم کے بارے میں کیا؟', tr: 'İbrahim hakkında ne dersiniz?', id: 'Bagaimana dengan Ibrahim?' }, next: 'about_ibrahim' }
         ]
     },
 
@@ -1118,51 +1139,114 @@ const journeyData = {
     // Design Argument
     design_argument: {
         id: 'design_argument',
-        title: 'The Design in Creation',
-        content: 'Look at the human body: 37 trillion cells working in harmony, eyes more complex than any camera, a brain with 86 billion neurons. Look at the universe: precisely balanced forces, Earth perfectly positioned for life. Does this look like random chance or intelligent design?',
+        title: {
+            en: 'The Design in Creation',
+            ar: 'التصميم في الخلق',
+            fr: 'Le Dessein dans la Création',
+            ur: 'تخلیق میں ڈیزائن',
+            tr: 'Yaratılıştaki Tasarım',
+            id: 'Desain dalam Penciptaan'
+        },
+        content: {
+            en: 'Look at the human body: 37 trillion cells working in harmony, eyes more complex than any camera, a brain with 86 billion neurons. Look at the universe: precisely balanced forces, Earth perfectly positioned for life. Does this look like random chance or intelligent design?',
+            ar: 'انظر إلى جسم الإنسان: 37 تريليون خلية تعمل بانسجام، عيون أكثر تعقيداً من أي كاميرا، دماغ بـ 86 مليار خلية عصبية. انظر إلى الكون: قوى متوازنة بدقة، الأرض في موقع مثالي للحياة. هل يبدو هذا صدفة عشوائية أم تصميم ذكي؟',
+            fr: 'Regardez le corps humain: 37 billions de cellules travaillant en harmonie, des yeux plus complexes que n\'importe quelle caméra, un cerveau avec 86 milliards de neurones. Regardez l\'univers: des forces précisément équilibrées, la Terre parfaitement positionnée pour la vie. Cela ressemble-t-il au hasard ou à un dessein intelligent?',
+            ur: 'انسانی جسم کو دیکھیں: 37 ٹریلین خلیے ہم آہنگی سے کام کر رہے ہیں، کسی بھی کیمرے سے زیادہ پیچیدہ آنکھیں، 86 ارب نیورانز والا دماغ۔ کائنات کو دیکھیں: قوتوں کا درست توازن، زمین زندگی کے لیے بالکل صحیح جگہ۔ کیا یہ اتفاقی لگتا ہے یا ذہین ڈیزائن؟',
+            tr: 'İnsan vücuduna bakın: 37 trilyon hücre uyum içinde çalışıyor, herhangi bir kameradan daha karmaşık gözler, 86 milyar nöronlu bir beyin. Evrene bakın: tam olarak dengelenmiş kuvvetler, yaşam için mükemmel konumlanmış Dünya. Bu rastgele şans mı yoksa akıllı tasarım mı?',
+            id: 'Lihatlah tubuh manusia: 37 triliun sel bekerja harmonis, mata lebih kompleks dari kamera manapun, otak dengan 86 miliar neuron. Lihatlah alam semesta: kekuatan yang seimbang sempurna, Bumi diposisikan sempurna untuk kehidupan. Apakah ini terlihat seperti kebetulan atau desain cerdas?'
+        },
         verse: {
             arabic: 'وَفِي أَنفُسِكُمْ أَفَلَا تُبْصِرُونَ',
-            translation: 'And within yourselves. Will you not then see?',
+            translation: {
+                en: 'And within yourselves. Will you not then see?',
+                ar: 'وفي أنفسكم أفلا تبصرون؟',
+                fr: 'Et en vous-mêmes, ne voyez-vous donc pas?',
+                ur: 'اور تمہاری اپنی جانوں میں، کیا تم نہیں دیکھتے؟',
+                tr: 'Kendi nefislerinizde de öyle. Hâlâ görmüyor musunuz?',
+                id: 'Dan dalam dirimu sendiri, apakah kamu tidak melihat?'
+            },
             reference: 'Surah Adh-Dhariyat 51:21'
         },
         options: [
-            { label: 'More evidence', next: 'evidence_god' },
-            { label: 'I\'m convinced', next: 'believes_god' },
-            { label: 'Science and Islam?', next: 'science_islam' }
+            { label: { en: 'More evidence', ar: 'المزيد من الأدلة', fr: 'Plus de preuves', ur: 'مزید ثبوت', tr: 'Daha fazla kanıt', id: 'Lebih banyak bukti' }, next: 'evidence_god' },
+            { label: { en: 'I\'m convinced', ar: 'أنا مقتنع', fr: 'Je suis convaincu', ur: 'میں قائل ہوں', tr: 'İkna oldum', id: 'Saya yakin' }, next: 'believes_god' },
+            { label: { en: 'Science and Islam?', ar: 'العلم والإسلام؟', fr: 'Science et Islam?', ur: 'سائنس اور اسلام؟', tr: 'Bilim ve İslam?', id: 'Sains dan Islam?' }, next: 'science_islam' }
         ]
     },
 
     // Evidence for God
     evidence_god: {
         id: 'evidence_god',
-        title: 'Evidence for a Creator',
-        content: 'Consider: 1) The Fine-Tuning: The universe\'s constants are precisely calibrated for life. 2) DNA\'s Information: Complex coded information requires an intelligent source. 3) Consciousness: Material cannot produce immaterial consciousness. 4) The Quran: Contains knowledge impossible for a 7th-century man.',
+        title: {
+            en: 'Evidence for a Creator',
+            ar: 'الأدلة على وجود الخالق',
+            fr: 'Preuves d\'un Créateur',
+            ur: 'خالق کے وجود کے ثبوت',
+            tr: 'Yaratıcının Varlığına Kanıt',
+            id: 'Bukti Adanya Pencipta'
+        },
+        content: {
+            en: 'Consider: 1) The Fine-Tuning: The universe\'s constants are precisely calibrated for life. 2) DNA\'s Information: Complex coded information requires an intelligent source. 3) Consciousness: Material cannot produce immaterial consciousness. 4) The Quran: Contains knowledge impossible for a 7th-century man.',
+            ar: 'تأمل: ١) الضبط الدقيق: ثوابت الكون مضبوطة بدقة للحياة. ٢) معلومات الحمض النووي: المعلومات المشفرة المعقدة تتطلب مصدراً ذكياً. ٣) الوعي: المادة لا يمكنها إنتاج وعي غير مادي. ٤) القرآن: يحتوي على معرفة مستحيلة لرجل في القرن السابع.',
+            fr: 'Considérez: 1) Le Réglage Fin: Les constantes de l\'univers sont précisément calibrées pour la vie. 2) L\'Information de l\'ADN: Une information codée complexe nécessite une source intelligente. 3) La Conscience: La matière ne peut pas produire une conscience immatérielle. 4) Le Coran: Contient des connaissances impossibles pour un homme du 7ème siècle.',
+            ur: 'غور کریں: ١) باریک ٹیوننگ: کائنات کے اصول زندگی کے لیے درست طور پر ترتیب دیے گئے ہیں۔ ٢) ڈی این اے کی معلومات: پیچیدہ کوڈڈ معلومات ذہین ماخذ کی ضرورت ہے۔ ٣) شعور: مادہ غیر مادی شعور پیدا نہیں کر سکتا۔ ٤) قرآن: ساتویں صدی کے آدمی کے لیے ناممکن علم رکھتا ہے۔',
+            tr: 'Düşünün: 1) İnce Ayar: Evrenin sabitleri yaşam için tam olarak kalibre edilmiş. 2) DNA\'nın Bilgisi: Karmaşık kodlanmış bilgi akıllı bir kaynak gerektirir. 3) Bilinç: Madde maddi olmayan bilinç üretemez. 4) Kur\'an: 7. yüzyıl insanı için imkansız bilgiler içerir.',
+            id: 'Pertimbangkan: 1) Penyetelan Halus: Konstanta alam semesta dikalibrasi tepat untuk kehidupan. 2) Informasi DNA: Informasi berkode kompleks memerlukan sumber cerdas. 3) Kesadaran: Materi tidak dapat menghasilkan kesadaran non-materi. 4) Al-Quran: Berisi pengetahuan yang mustahil bagi manusia abad ke-7.'
+        },
         verse: {
             arabic: 'سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ',
-            translation: 'We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.',
+            translation: {
+                en: 'We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.',
+                ar: 'سنريهم آياتنا في الآفاق وفي أنفسهم حتى يتبين لهم أنه الحق.',
+                fr: 'Nous leur montrerons Nos signes dans les horizons et en eux-mêmes jusqu\'à ce qu\'il leur devienne évident que c\'est la vérité.',
+                ur: 'ہم انہیں اپنی نشانیاں آفاق میں اور ان کی اپنی جانوں میں دکھائیں گے یہاں تک کہ ان پر واضح ہو جائے کہ یہ حق ہے۔',
+                tr: 'Onlara ufuklarda ve kendi nefislerinde ayetlerimizi göstereceğiz, ta ki bunun hak olduğu onlara açıkça belli oluncaya kadar.',
+                id: 'Kami akan memperlihatkan kepada mereka tanda-tanda Kami di segenap ufuk dan pada diri mereka sendiri hingga jelas bagi mereka bahwa itu adalah benar.'
+            },
             reference: 'Surah Fussilat 41:53'
         },
         options: [
-            { label: 'What about science and Islam?', next: 'science_islam' },
-            { label: 'I\'m convinced, tell me more about Islam', next: 'believes_god' },
-            { label: 'What does the Quran say?', next: 'about_quran' }
+            { label: { en: 'What about science and Islam?', ar: 'ماذا عن العلم والإسلام؟', fr: 'Qu\'en est-il de la science et de l\'Islam?', ur: 'سائنس اور اسلام کے بارے میں کیا؟', tr: 'Bilim ve İslam hakkında ne dersiniz?', id: 'Bagaimana dengan sains dan Islam?' }, next: 'science_islam' },
+            { label: { en: 'I\'m convinced, tell me more about Islam', ar: 'أنا مقتنع، أخبرني المزيد عن الإسلام', fr: 'Je suis convaincu, parlez-moi plus de l\'Islam', ur: 'میں قائل ہوں، مجھے اسلام کے بارے میں مزید بتائیں', tr: 'İkna oldum, İslam hakkında daha fazla anlat', id: 'Saya yakin, ceritakan lebih banyak tentang Islam' }, next: 'believes_god' },
+            { label: { en: 'What does the Quran say?', ar: 'ماذا يقول القرآن؟', fr: 'Que dit le Coran?', ur: 'قرآن کیا کہتا ہے؟', tr: 'Kur\'an ne diyor?', id: 'Apa kata Al-Quran?' }, next: 'about_quran' }
         ]
     },
 
     // Science and Islam
     science_islam: {
         id: 'science_islam',
-        title: 'Science and Islam',
-        content: 'Islam and science are not in conflict. The Islamic Golden Age led world scientific advancement. The Quran contains statements about embryology, the Big Bang, expanding universe, and water cycle that align with modern science - remarkable for a 7th century book.',
+        title: {
+            en: 'Science and Islam',
+            ar: 'العلم والإسلام',
+            fr: 'Science et Islam',
+            ur: 'سائنس اور اسلام',
+            tr: 'Bilim ve İslam',
+            id: 'Sains dan Islam'
+        },
+        content: {
+            en: 'Islam and science are not in conflict. The Islamic Golden Age led world scientific advancement. The Quran contains statements about embryology, the Big Bang, expanding universe, and water cycle that align with modern science - remarkable for a 7th century book.',
+            ar: 'الإسلام والعلم ليسا في صراع. العصر الذهبي الإسلامي قاد التقدم العلمي العالمي. يحتوي القرآن على تصريحات عن علم الأجنة، الانفجار العظيم، الكون المتوسع، ودورة الماء تتوافق مع العلم الحديث - أمر رائع لكتاب من القرن السابع.',
+            fr: 'L\'Islam et la science ne sont pas en conflit. L\'Âge d\'Or islamique a mené l\'avancement scientifique mondial. Le Coran contient des déclarations sur l\'embryologie, le Big Bang, l\'univers en expansion et le cycle de l\'eau qui s\'alignent avec la science moderne - remarquable pour un livre du 7ème siècle.',
+            ur: 'اسلام اور سائنس میں تضاد نہیں۔ اسلامی سنہری دور نے عالمی سائنسی ترقی کی قیادت کی۔ قرآن میں جنین کی نشوونما، بگ بینگ، پھیلتی کائنات، اور پانی کے چکر کے بارے میں بیانات ہیں جو جدید سائنس سے ہم آہنگ ہیں - ساتویں صدی کی کتاب کے لیے حیرت انگیز۔',
+            tr: 'İslam ve bilim çatışma içinde değil. İslam Altın Çağı dünya bilimsel ilerlemesine öncülük etti. Kur\'an embriyoloji, Büyük Patlama, genişleyen evren ve su döngüsü hakkında modern bilimle uyumlu ifadeler içerir - 7. yüzyıl kitabı için dikkat çekici.',
+            id: 'Islam dan sains tidak bertentangan. Zaman Keemasan Islam memimpin kemajuan ilmiah dunia. Al-Quran berisi pernyataan tentang embriologi, Big Bang, alam semesta yang mengembang, dan siklus air yang sejalan dengan sains modern - luar biasa untuk buku abad ke-7.'
+        },
         verse: {
             arabic: 'أَوَلَمْ يَرَ الَّذِينَ كَفَرُوا أَنَّ السَّمَاوَاتِ وَالْأَرْضَ كَانَتَا رَتْقًا فَفَتَقْنَاهُمَا',
-            translation: 'Have those who disbelieved not considered that the heavens and the earth were a joined entity, and We separated them?',
+            translation: {
+                en: 'Have those who disbelieved not considered that the heavens and the earth were a joined entity, and We separated them?',
+                ar: 'أولم ير الذين كفروا أن السماوات والأرض كانتا رتقاً ففتقناهما؟',
+                fr: 'Ceux qui ont mécru n\'ont-ils pas vu que les cieux et la terre étaient une masse compacte? Nous les avons séparés.',
+                ur: 'کیا کافروں نے نہیں دیکھا کہ آسمان اور زمین ملے ہوئے تھے پھر ہم نے انہیں جدا کیا؟',
+                tr: 'İnkar edenler görmedi mi ki gökler ve yer bitişik idi, biz onları ayırdık?',
+                id: 'Apakah orang-orang kafir tidak melihat bahwa langit dan bumi keduanya dahulu adalah sesuatu yang padu, kemudian Kami pisahkan keduanya?'
+            },
             reference: 'Surah Al-Anbiya 21:30'
         },
         options: [
-            { label: 'More scientific miracles', next: 'quran_science' },
-            { label: 'Tell me about the Quran', next: 'about_quran' },
-            { label: 'I want to learn Islam basics', next: 'islam_basics' }
+            { label: { en: 'More scientific miracles', ar: 'المزيد من المعجزات العلمية', fr: 'Plus de miracles scientifiques', ur: 'مزید سائنسی معجزات', tr: 'Daha fazla bilimsel mucize', id: 'Lebih banyak mukjizat ilmiah' }, next: 'quran_science' },
+            { label: { en: 'Tell me about the Quran', ar: 'أخبرني عن القرآن', fr: 'Parlez-moi du Coran', ur: 'مجھے قرآن کے بارے میں بتائیں', tr: 'Kur\'an hakkında anlat', id: 'Ceritakan tentang Al-Quran' }, next: 'about_quran' },
+            { label: { en: 'I want to learn Islam basics', ar: 'أريد تعلم أساسيات الإسلام', fr: 'Je veux apprendre les bases de l\'Islam', ur: 'میں اسلام کی بنیادیں سیکھنا چاہتا ہوں', tr: 'İslam\'ın temellerini öğrenmek istiyorum', id: 'Saya ingin belajar dasar-dasar Islam' }, next: 'islam_basics' }
         ]
     },
 
@@ -1577,32 +1661,74 @@ const journeyData = {
     // Six Articles of Faith
     six_articles: {
         id: 'six_articles',
-        title: 'Six Articles of Faith',
-        content: 'Muslims believe in: 1) Allah - The One True God, 2) Angels, 3) Divine Books including Quran, 4) Prophets from Adam to Muhammad ﷺ, 5) Day of Judgment, 6) Divine Decree.',
+        title: {
+            en: 'Six Articles of Faith',
+            ar: 'أركان الإيمان الستة',
+            fr: 'Les Six Articles de Foi',
+            ur: 'ایمان کے چھ ارکان',
+            tr: 'İmanın Altı Şartı',
+            id: 'Enam Rukun Iman'
+        },
+        content: {
+            en: 'Muslims believe in: 1) Allah - The One True God, 2) Angels, 3) Divine Books including Quran, 4) Prophets from Adam to Muhammad ﷺ, 5) Day of Judgment, 6) Divine Decree.',
+            ar: 'يؤمن المسلمون بـ: ١) الله - الإله الواحد الحق، ٢) الملائكة، ٣) الكتب السماوية بما فيها القرآن، ٤) الأنبياء من آدم إلى محمد ﷺ، ٥) يوم القيامة، ٦) القضاء والقدر.',
+            fr: 'Les Musulmans croient en: 1) Allah - Le Seul Vrai Dieu, 2) Les Anges, 3) Les Livres Divins dont le Coran, 4) Les Prophètes d\'Adam à Muhammad ﷺ, 5) Le Jour du Jugement, 6) Le Décret Divin.',
+            ur: 'مسلمان ایمان رکھتے ہیں: ١) اللہ - واحد سچا خدا، ٢) فرشتے، ٣) آسمانی کتابیں بشمول قرآن، ٤) آدم سے محمد ﷺ تک نبی، ٥) یوم القیامہ، ٦) تقدیر۔',
+            tr: 'Müslümanlar şunlara inanır: 1) Allah - Tek Gerçek Tanrı, 2) Melekler, 3) Kur\'an dahil İlahi Kitaplar, 4) Adem\'den Muhammed ﷺ\'e Peygamberler, 5) Kıyamet Günü, 6) Kader.',
+            id: 'Muslim percaya pada: 1) Allah - Tuhan Yang Maha Esa, 2) Malaikat, 3) Kitab-kitab Suci termasuk Al-Quran, 4) Nabi-nabi dari Adam hingga Muhammad ﷺ, 5) Hari Kiamat, 6) Qada dan Qadar.'
+        },
         verse: {
             arabic: 'آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ مِن رَّبِّهِ وَالْمُؤْمِنُونَ',
-            translation: 'The Messenger believed in what was revealed to him from his Lord, and so have the believers.',
+            translation: {
+                en: 'The Messenger believed in what was revealed to him from his Lord, and so have the believers.',
+                ar: 'آمن الرسول بما أنزل إليه من ربه والمؤمنون.',
+                fr: 'Le Messager a cru en ce qui lui a été révélé de son Seigneur, ainsi que les croyants.',
+                ur: 'رسول اس پر ایمان لایا جو اس کے رب کی طرف سے نازل ہوا اور مومنین بھی۔',
+                tr: 'Peygamber Rabbinden kendisine indirilene iman etti, müminler de.',
+                id: 'Rasul telah beriman kepada apa yang diturunkan kepadanya dari Tuhannya, demikian pula orang-orang yang beriman.'
+            },
             reference: 'Surah Al-Baqarah 2:285'
         },
         options: [
-            { label: 'What is Sunnah?', next: 'about_sunnah' },
-            { label: 'How do I become Muslim?', next: 'become_muslim' }
+            { label: { en: 'What is Sunnah?', ar: 'ما هي السنة؟', fr: 'Qu\'est-ce que la Sunnah?', ur: 'سنت کیا ہے؟', tr: 'Sünnet nedir?', id: 'Apa itu Sunnah?' }, next: 'about_sunnah' },
+            { label: { en: 'How do I become Muslim?', ar: 'كيف أصبح مسلماً؟', fr: 'Comment devenir Musulman?', ur: 'میں مسلمان کیسے بنوں؟', tr: 'Nasıl Müslüman olurum?', id: 'Bagaimana cara menjadi Muslim?' }, next: 'become_muslim' }
         ]
     },
 
     // About Sunnah
     about_sunnah: {
         id: 'about_sunnah',
-        title: 'The Sunnah (Prophetic Way)',
-        content: 'The Sunnah refers to the teachings and practices of Prophet Muhammad ﷺ. It\'s the practical example of how to live Islam. Following the Sunnah is essential because the Prophet ﷺ was the best interpreter of the Quran.',
+        title: {
+            en: 'The Sunnah (Prophetic Way)',
+            ar: 'السنة النبوية',
+            fr: 'La Sunnah (Voie Prophétique)',
+            ur: 'سنت (نبوی طریقہ)',
+            tr: 'Sünnet (Peygamber Yolu)',
+            id: 'Sunnah (Jalan Nabi)'
+        },
+        content: {
+            en: 'The Sunnah refers to the teachings and practices of Prophet Muhammad ﷺ. It\'s the practical example of how to live Islam. Following the Sunnah is essential because the Prophet ﷺ was the best interpreter of the Quran.',
+            ar: 'السنة تشير إلى تعاليم وممارسات النبي محمد ﷺ. إنها المثال العملي لكيفية العيش بالإسلام. اتباع السنة ضروري لأن النبي ﷺ كان أفضل مفسر للقرآن.',
+            fr: 'La Sunnah fait référence aux enseignements et pratiques du Prophète Muhammad ﷺ. C\'est l\'exemple pratique de comment vivre l\'Islam. Suivre la Sunnah est essentiel car le Prophète ﷺ était le meilleur interprète du Coran.',
+            ur: 'سنت نبی محمد ﷺ کی تعلیمات اور عمل کو کہتے ہیں۔ یہ اسلام کو جینے کا عملی نمونہ ہے۔ سنت کی پیروی ضروری ہے کیونکہ نبی ﷺ قرآن کے بہترین مفسر تھے۔',
+            tr: 'Sünnet, Peygamber Muhammed ﷺ\'in öğretileri ve uygulamalarına atıfta bulunur. İslam\'ı nasıl yaşayacağımızın pratik örneğidir. Sünnete uymak önemlidir çünkü Peygamber ﷺ Kur\'an\'ın en iyi yorumcusuydu.',
+            id: 'Sunnah merujuk pada ajaran dan praktik Nabi Muhammad ﷺ. Ini adalah contoh praktis bagaimana menjalani Islam. Mengikuti Sunnah sangat penting karena Nabi ﷺ adalah penafsir terbaik Al-Quran.'
+        },
         verse: {
             arabic: 'لَّقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ',
-            translation: 'There has certainly been for you in the Messenger of Allah an excellent pattern.',
+            translation: {
+                en: 'There has certainly been for you in the Messenger of Allah an excellent pattern.',
+                ar: 'لقد كان لكم في رسول الله أسوة حسنة.',
+                fr: 'Vous avez certes dans le Messager d\'Allah un excellent modèle.',
+                ur: 'بے شک تمہارے لیے رسول اللہ میں بہترین نمونہ ہے۔',
+                tr: 'Andolsun, sizin için Allah\'ın Resûlünde güzel bir örnek vardır.',
+                id: 'Sesungguhnya telah ada pada diri Rasulullah itu suri teladan yang baik bagimu.'
+            },
             reference: 'Surah Al-Ahzab 33:21'
         },
         options: [
-            { label: 'I\'m ready to become Muslim', next: 'become_muslim' },
-            { label: 'I want to explore more', next: 'start' }
+            { label: { en: 'I\'m ready to become Muslim', ar: 'أنا مستعد لأصبح مسلماً', fr: 'Je suis prêt à devenir Musulman', ur: 'میں مسلمان بننے کو تیار ہوں', tr: 'Müslüman olmaya hazırım', id: 'Saya siap menjadi Muslim' }, next: 'become_muslim' },
+            { label: { en: 'I want to explore more', ar: 'أريد استكشاف المزيد', fr: 'Je veux explorer davantage', ur: 'میں مزید جاننا چاہتا ہوں', tr: 'Daha fazla keşfetmek istiyorum', id: 'Saya ingin menjelajahi lebih banyak' }, next: 'start' }
         ]
     },
 
@@ -1712,16 +1838,37 @@ const journeyData = {
     // Next Steps
     next_steps: {
         id: 'next_steps',
-        title: 'Your New Beginning',
-        content: 'After Shahada: 1) Take a purifying bath (Ghusl), 2) Learn to pray, 3) Read Quran with translation, 4) Connect with local Muslims/mosque, 5) Learn gradually. All previous sins are forgiven - you\'re like a newborn!',
+        title: {
+            en: 'Your New Beginning',
+            ar: 'بدايتك الجديدة',
+            fr: 'Votre Nouveau Départ',
+            ur: 'آپ کی نئی شروعات',
+            tr: 'Yeni Başlangıcınız',
+            id: 'Awal Baru Anda'
+        },
+        content: {
+            en: 'After Shahada: 1) Take a purifying bath (Ghusl), 2) Learn to pray, 3) Read Quran with translation, 4) Connect with local Muslims/mosque, 5) Learn gradually. All previous sins are forgiven - you\'re like a newborn!',
+            ar: 'بعد الشهادة: ١) اغتسل غسلاً، ٢) تعلم الصلاة، ٣) اقرأ القرآن بالترجمة، ٤) تواصل مع المسلمين المحليين/المسجد، ٥) تعلم تدريجياً. جميع الذنوب السابقة مغفورة - أنت كالمولود الجديد!',
+            fr: 'Après la Shahada: 1) Prenez un bain purificateur (Ghusl), 2) Apprenez à prier, 3) Lisez le Coran avec traduction, 4) Connectez-vous avec les Musulmans locaux/mosquée, 5) Apprenez progressivement. Tous les péchés passés sont pardonnés - vous êtes comme un nouveau-né!',
+            ur: 'شہادت کے بعد: ١) غسل کریں، ٢) نماز سیکھیں، ٣) ترجمے کے ساتھ قرآن پڑھیں، ٤) مقامی مسلمانوں/مسجد سے رابطہ کریں، ٥) آہستہ آہستہ سیکھیں۔ تمام پچھلے گناہ معاف - آپ نوزائیدہ کی طرح ہیں!',
+            tr: 'Şehadetten sonra: 1) Gusül alın, 2) Namaz kılmayı öğrenin, 3) Kur\'an\'ı tercümesiyle okuyun, 4) Yerel Müslümanlar/cami ile bağlantı kurun, 5) Yavaş yavaş öğrenin. Tüm geçmiş günahlar affedildi - yeni doğmuş gibisiniz!',
+            id: 'Setelah Syahadat: 1) Mandi besar (Ghusl), 2) Belajar shalat, 3) Baca Al-Quran dengan terjemahan, 4) Hubungi Muslim/masjid setempat, 5) Belajar bertahap. Semua dosa masa lalu diampuni - Anda seperti bayi yang baru lahir!'
+        },
         verse: {
             arabic: 'قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ',
-            translation: 'Say, "O My servants who have transgressed, do not despair of the mercy of Allah."',
+            translation: {
+                en: 'Say, "O My servants who have transgressed, do not despair of the mercy of Allah."',
+                ar: 'قل يا عبادي الذين أسرفوا على أنفسهم لا تقنطوا من رحمة الله.',
+                fr: 'Dis: "Ô Mes serviteurs qui avez transgressé, ne désespérez pas de la miséricorde d\'Allah."',
+                ur: 'کہو: اے میرے بندو جنہوں نے اپنی جانوں پر زیادتی کی، اللہ کی رحمت سے مایوس نہ ہو۔',
+                tr: 'De ki: "Ey kendilerine karşı aşırı giden kullarım, Allah\'ın rahmetinden ümit kesmeyin."',
+                id: 'Katakanlah: "Wahai hamba-hamba-Ku yang melampaui batas, janganlah kamu berputus asa dari rahmat Allah."'
+            },
             reference: 'Surah Az-Zumar 39:53'
         },
         options: [
-            { label: 'Learn about Prayer Times', next: 'prayer_info' },
-            { label: 'Start from beginning', next: 'start' }
+            { label: { en: 'Learn about Prayer Times', ar: 'تعرف على مواقيت الصلاة', fr: 'En savoir plus sur les heures de prière', ur: 'نماز کے اوقات کے بارے میں جانیں', tr: 'Namaz vakitlerini öğren', id: 'Pelajari waktu shalat' }, next: 'prayer_info' },
+            { label: { en: 'Start from beginning', ar: 'ابدأ من البداية', fr: 'Recommencer depuis le début', ur: 'شروع سے شروع کریں', tr: 'Baştan başla', id: 'Mulai dari awal' }, next: 'start' }
         ]
     },
 
