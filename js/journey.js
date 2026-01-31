@@ -1431,16 +1431,37 @@ const journeyData = {
     // Morality
     morality: {
         id: 'morality',
-        title: 'Morality and Purpose',
-        content: 'If there\'s no God, where do objective moral values come from? Why is kindness "good" and cruelty "bad"? Islam teaches that morality comes from Allah - The All-Knowing, All-Wise. This gives life purpose: to know and worship the Creator.',
+        title: {
+            en: 'Morality and Purpose',
+            ar: 'الأخلاق والهدف',
+            fr: 'Moralité et But',
+            ur: 'اخلاقیات اور مقصد',
+            tr: 'Ahlak ve Amaç',
+            id: 'Moralitas dan Tujuan'
+        },
+        content: {
+            en: 'If there\'s no God, where do objective moral values come from? Why is kindness "good" and cruelty "bad"? Islam teaches that morality comes from Allah - The All-Knowing, All-Wise. This gives life purpose: to know and worship the Creator.',
+            ar: 'إذا لم يكن هناك إله، من أين تأتي القيم الأخلاقية الموضوعية؟ لماذا اللطف "جيد" والقسوة "سيئة"؟ يعلم الإسلام أن الأخلاق تأتي من الله - العليم الحكيم. هذا يعطي الحياة هدفاً: معرفة وعبادة الخالق.',
+            fr: 'S\'il n\'y a pas de Dieu, d\'où viennent les valeurs morales objectives? Pourquoi la gentillesse est-elle "bonne" et la cruauté "mauvaise"? L\'Islam enseigne que la moralité vient d\'Allah - L\'Omniscient, Le Sage. Cela donne un but à la vie: connaître et adorer le Créateur.',
+            ur: 'اگر کوئی خدا نہیں تو معروضی اخلاقی اقدار کہاں سے آتی ہیں؟ مہربانی "اچھی" اور ظلم "برا" کیوں ہے؟ اسلام سکھاتا ہے کہ اخلاق اللہ کی طرف سے آتے ہیں - علیم اور حکیم۔ یہ زندگی کو مقصد دیتا ہے: خالق کو جاننا اور اس کی عبادت کرنا۔',
+            tr: 'Tanrı yoksa, nesnel ahlaki değerler nereden gelir? Neden iyilik "iyi" ve zulüm "kötü"dür? İslam, ahlakın Allah\'tan - Her Şeyi Bilen, Hikmet Sahibi\'nden geldiğini öğretir. Bu hayata amaç verir: Yaratıcıyı tanımak ve O\'na ibadet etmek.',
+            id: 'Jika tidak ada Tuhan, dari mana nilai-nilai moral objektif berasal? Mengapa kebaikan "baik" dan kekejaman "buruk"? Islam mengajarkan bahwa moralitas berasal dari Allah - Yang Maha Mengetahui, Maha Bijaksana. Ini memberi kehidupan tujuan: mengenal dan menyembah Sang Pencipta.'
+        },
         verse: {
             arabic: 'وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ',
-            translation: 'And I did not create the jinn and mankind except to worship Me.',
+            translation: {
+                en: 'And I did not create the jinn and mankind except to worship Me.',
+                ar: 'وما خلقت الجن والإنس إلا ليعبدون.',
+                fr: 'Je n\'ai créé les djinns et les hommes que pour qu\'ils M\'adorent.',
+                ur: 'اور میں نے جن اور انسان کو صرف اپنی عبادت کے لیے پیدا کیا۔',
+                tr: 'Ben cinleri ve insanları ancak bana ibadet etsinler diye yarattım.',
+                id: 'Dan Aku tidak menciptakan jin dan manusia melainkan supaya mereka menyembah-Ku.'
+            },
             reference: 'Surah Adh-Dhariyat 51:56'
         },
         options: [
-            { label: 'I\'m interested, tell me more about God', next: 'evidence_god' },
-            { label: 'What are Islam\'s teachings?', next: 'islam_basics' }
+            { label: { en: 'I\'m interested, tell me more about God', ar: 'أنا مهتم، أخبرني المزيد عن الله', fr: 'Je suis intéressé, dites-moi plus sur Dieu', ur: 'مجھے دلچسپی ہے، مجھے اللہ کے بارے میں مزید بتائیں', tr: 'İlgileniyorum, Tanrı hakkında daha fazla anlat', id: 'Saya tertarik, ceritakan lebih banyak tentang Tuhan' }, next: 'evidence_god' },
+            { label: { en: 'What are Islam\'s teachings?', ar: 'ما هي تعاليم الإسلام؟', fr: 'Quels sont les enseignements de l\'Islam?', ur: 'اسلام کی تعلیمات کیا ہیں؟', tr: 'İslam\'ın öğretileri nelerdir?', id: 'Apa ajaran-ajaran Islam?' }, next: 'islam_basics' }
         ]
     },
 
@@ -1521,18 +1542,39 @@ const journeyData = {
     // Christian Path
     christian_path: {
         id: 'christian_path',
-        title: 'Common Ground with Christianity',
-        content: 'Muslims and Christians share much: belief in One God, virgin birth of Jesus, his miracles, his return, the Day of Judgment, and moral values. We both revere Jesus - Muslims believe he was a prophet who called people to worship God alone.',
+        title: {
+            en: 'Common Ground with Christianity',
+            ar: 'أرضية مشتركة مع المسيحية',
+            fr: 'Points Communs avec le Christianisme',
+            ur: 'عیسائیت کے ساتھ مشترکات',
+            tr: 'Hristiyanlıkla Ortak Zemin',
+            id: 'Kesamaan dengan Kristen'
+        },
+        content: {
+            en: 'Muslims and Christians share much: belief in One God, virgin birth of Jesus, his miracles, his return, the Day of Judgment, and moral values. We both revere Jesus - Muslims believe he was a prophet who called people to worship God alone.',
+            ar: 'يتشارك المسلمون والمسيحيون الكثير: الإيمان بإله واحد، ولادة عيسى من عذراء، معجزاته، عودته، يوم القيامة، والقيم الأخلاقية. كلانا يوقر عيسى - يؤمن المسلمون أنه كان نبياً دعا الناس لعبادة الله وحده.',
+            fr: 'Les Musulmans et Chrétiens partagent beaucoup: croyance en Un Dieu, naissance virginale de Jésus, ses miracles, son retour, le Jour du Jugement et les valeurs morales. Nous révérons tous deux Jésus - les Musulmans croient qu\'il était un prophète qui appelait les gens à adorer Dieu seul.',
+            ur: 'مسلمان اور عیسائی بہت کچھ مشترک رکھتے ہیں: ایک خدا پر ایمان، عیسیٰ کی کنواری پیدائش، ان کے معجزات، ان کی واپسی، قیامت کا دن، اور اخلاقی اقدار۔ ہم دونوں عیسیٰ کی تعظیم کرتے ہیں - مسلمان مانتے ہیں کہ وہ نبی تھے جنہوں نے لوگوں کو صرف اللہ کی عبادت کی دعوت دی۔',
+            tr: 'Müslümanlar ve Hristiyanlar çok şey paylaşır: Tek Tanrı\'ya inanç, İsa\'nın bakire doğumu, mucizeleri, dönüşü, Kıyamet Günü ve ahlaki değerler. İkimiz de İsa\'ya saygı duyarız - Müslümanlar onun insanları yalnızca Allah\'a ibadet etmeye çağıran bir peygamber olduğuna inanır.',
+            id: 'Muslim dan Kristen berbagi banyak hal: kepercayaan pada Satu Tuhan, kelahiran Isa dari perawan, mukjizat-mukjizatnya, kedatangannya kembali, Hari Kiamat, dan nilai-nilai moral. Kita berdua menghormati Isa - Muslim percaya dia adalah nabi yang menyeru orang untuk menyembah Tuhan saja.'
+        },
         verse: {
             arabic: 'وَلَقَدْ آتَيْنَا مُوسَى الْكِتَابَ وَقَفَّيْنَا مِن بَعْدِهِ بِالرُّسُلِ',
-            translation: 'And We gave Moses the Scripture and followed up after him with messengers.',
+            translation: {
+                en: 'And We gave Moses the Scripture and followed up after him with messengers.',
+                ar: 'ولقد آتينا موسى الكتاب وقفينا من بعده بالرسل.',
+                fr: 'Et Nous avons donné à Moïse l\'Écriture et Nous avons envoyé après lui des messagers.',
+                ur: 'اور ہم نے موسیٰ کو کتاب دی اور اس کے بعد رسولوں کو بھیجتے رہے۔',
+                tr: 'Andolsun Musa\'ya Kitab\'ı verdik ve onun ardından art arda peygamberler gönderdik.',
+                id: 'Dan sesungguhnya Kami telah memberikan kepada Musa Kitab dan Kami mengutus rasul-rasul sesudahnya.'
+            },
             reference: 'Surah Al-Baqarah 2:87'
         },
         options: [
-            { label: 'What does Islam say about Jesus?', next: 'jesus_islam' },
-            { label: 'What about the Bible?', next: 'about_scripture' },
-            { label: 'Trinity question', next: 'trinity_question' },
-            { label: 'Tell me about Islam basics', next: 'islam_basics' }
+            { label: { en: 'What does Islam say about Jesus?', ar: 'ماذا يقول الإسلام عن عيسى؟', fr: 'Que dit l\'Islam sur Jésus?', ur: 'اسلام عیسیٰ کے بارے میں کیا کہتا ہے؟', tr: 'İslam İsa hakkında ne diyor?', id: 'Apa kata Islam tentang Isa?' }, next: 'jesus_islam' },
+            { label: { en: 'What about the Bible?', ar: 'ماذا عن الكتاب المقدس؟', fr: 'Qu\'en est-il de la Bible?', ur: 'بائبل کے بارے میں کیا؟', tr: 'Kitab-ı Mukaddes hakkında ne dersiniz?', id: 'Bagaimana dengan Alkitab?' }, next: 'about_scripture' },
+            { label: { en: 'Trinity question', ar: 'سؤال الثالوث', fr: 'Question sur la Trinité', ur: 'تثلیث کا سوال', tr: 'Teslis sorusu', id: 'Pertanyaan Trinitas' }, next: 'trinity_question' },
+            { label: { en: 'Tell me about Islam basics', ar: 'أخبرني عن أساسيات الإسلام', fr: 'Parlez-moi des bases de l\'Islam', ur: 'مجھے اسلام کی بنیادیں بتائیں', tr: 'İslam\'ın temellerini anlat', id: 'Ceritakan dasar-dasar Islam' }, next: 'islam_basics' }
         ]
     },
 
