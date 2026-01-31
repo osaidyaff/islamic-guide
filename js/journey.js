@@ -5,58 +5,121 @@ const journeyData = {
     // Starting point
     start: {
         id: 'start',
-        title: 'Welcome, Seeker of Truth',
-        content: 'This journey is designed to help you explore and understand Islam based on where you are in your spiritual path. Answer honestly, and we will guide you with wisdom, evidence, and respect.',
+        title: {
+            en: 'Welcome, Seeker of Truth',
+            ar: 'مرحباً، أيها الباحث عن الحقيقة',
+            fr: 'Bienvenue, Chercheur de Vérité',
+            ur: 'خوش آمدید، حق کے متلاشی',
+            tr: 'Hoş Geldiniz, Hakikat Arayıcısı',
+            id: 'Selamat Datang, Pencari Kebenaran'
+        },
+        content: {
+            en: 'This journey is designed to help you explore and understand Islam based on where you are in your spiritual path. Answer honestly, and we will guide you with wisdom, evidence, and respect.',
+            ar: 'تم تصميم هذه الرحلة لمساعدتك على استكشاف وفهم الإسلام بناءً على مكانك في مسيرتك الروحية. أجب بصدق، وسنرشدك بالحكمة والدليل والاحترام.',
+            fr: 'Ce voyage est conçu pour vous aider à explorer et comprendre l\'Islam selon votre cheminement spirituel. Répondez honnêtement, et nous vous guiderons avec sagesse, preuves et respect.',
+            ur: 'یہ سفر آپ کو اسلام کو سمجھنے میں مدد کے لیے بنایا گیا ہے۔ ایمانداری سے جواب دیں، اور ہم حکمت، ثبوت اور احترام کے ساتھ آپ کی رہنمائی کریں گے۔',
+            tr: 'Bu yolculuk, manevi yolculuğunuza göre İslam\'ı keşfetmenize ve anlamanıza yardımcı olmak için tasarlanmıştır. Dürüstçe cevap verin, sizi hikmet, kanıt ve saygıyla yönlendireceğiz.',
+            id: 'Perjalanan ini dirancang untuk membantu Anda menjelajahi dan memahami Islam. Jawablah dengan jujur, dan kami akan membimbing Anda dengan hikmah, bukti, dan rasa hormat.'
+        },
         verse: {
             arabic: 'ادْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِالْحِكْمَةِ وَالْمَوْعِظَةِ الْحَسَنَةِ',
-            translation: 'Invite to the way of your Lord with wisdom and good instruction.',
+            translation: {
+                en: 'Invite to the way of your Lord with wisdom and good instruction.',
+                ar: 'ادع إلى سبيل ربك بالحكمة والموعظة الحسنة.',
+                fr: 'Invite au sentier de ton Seigneur avec sagesse et bonne exhortation.',
+                ur: 'اپنے رب کی راہ کی طرف حکمت اور اچھی نصیحت کے ساتھ دعوت دو۔',
+                tr: 'Rabbinin yoluna hikmetle ve güzel öğütle davet et.',
+                id: 'Serulah ke jalan Tuhanmu dengan hikmah dan pengajaran yang baik.'
+            },
             reference: 'Surah An-Nahl 16:125'
         },
         options: [
-            { label: 'I believe in God/Creator', next: 'believes_god' },
-            { label: 'I\'m unsure about God\'s existence', next: 'unsure_god' },
-            { label: 'I don\'t believe in God', next: 'atheist_start' },
-            { label: 'I\'m already Muslim', next: 'muslim_path' },
-            { label: 'I follow another religion', next: 'other_religion' },
-            { label: 'Address misconceptions about Islam', next: 'misconceptions' }
+            { label: { en: 'I believe in God/Creator', ar: 'أؤمن بالله/الخالق', fr: 'Je crois en Dieu/Créateur', ur: 'میں اللہ/خالق پر ایمان رکھتا ہوں', tr: 'Tanrı\'ya/Yaratıcı\'ya inanıyorum', id: 'Saya percaya pada Tuhan/Pencipta' }, next: 'believes_god' },
+            { label: { en: 'I\'m unsure about God\'s existence', ar: 'لست متأكداً من وجود الله', fr: 'Je ne suis pas sûr de l\'existence de Dieu', ur: 'مجھے اللہ کے وجود کے بارے میں یقین نہیں', tr: 'Tanrı\'nın varlığından emin değilim', id: 'Saya tidak yakin tentang keberadaan Tuhan' }, next: 'unsure_god' },
+            { label: { en: 'I don\'t believe in God', ar: 'لا أؤمن بالله', fr: 'Je ne crois pas en Dieu', ur: 'میں اللہ پر ایمان نہیں رکھتا', tr: 'Tanrı\'ya inanmıyorum', id: 'Saya tidak percaya pada Tuhan' }, next: 'atheist_start' },
+            { label: { en: 'I\'m already Muslim', ar: 'أنا مسلم بالفعل', fr: 'Je suis déjà musulman', ur: 'میں پہلے سے مسلمان ہوں', tr: 'Ben zaten Müslümanım', id: 'Saya sudah Muslim' }, next: 'muslim_path' },
+            { label: { en: 'I follow another religion', ar: 'أتبع ديناً آخر', fr: 'Je suis une autre religion', ur: 'میں کسی اور مذہب کی پیروی کرتا ہوں', tr: 'Başka bir dine mensubum', id: 'Saya mengikuti agama lain' }, next: 'other_religion' },
+            { label: { en: 'Address misconceptions about Islam', ar: 'معالجة المفاهيم الخاطئة عن الإسلام', fr: 'Aborder les idées fausses sur l\'Islam', ur: 'اسلام کے بارے میں غلط فہمیوں کا ازالہ', tr: 'İslam hakkındaki yanlış anlamaları ele al', id: 'Bahas kesalahpahaman tentang Islam' }, next: 'misconceptions' }
         ]
     },
 
     // Muslim Path - New Branch
     muslim_path: {
         id: 'muslim_path',
-        title: 'Welcome, Fellow Muslim',
-        content: 'Alhamdulillah! Whether you\'re seeking to strengthen your faith, learn more about your deen, or have questions about different groups within Islam, this journey will help you.',
+        title: {
+            en: 'Welcome, Fellow Muslim',
+            ar: 'مرحباً أيها المسلم',
+            fr: 'Bienvenue, Cher Musulman',
+            ur: 'خوش آمدید، ساتھی مسلم',
+            tr: 'Hoş Geldin, Kardeş Müslüman',
+            id: 'Selamat Datang, Saudara Muslim'
+        },
+        content: {
+            en: 'Alhamdulillah! Whether you\'re seeking to strengthen your faith, learn more about your deen, or have questions about different groups within Islam, this journey will help you.',
+            ar: 'الحمد لله! سواء كنت تسعى لتقوية إيمانك، أو تعلم المزيد عن دينك، أو لديك أسئلة حول الفرق المختلفة في الإسلام، هذه الرحلة ستساعدك.',
+            fr: 'Alhamdulillah! Que vous cherchiez à renforcer votre foi, à en apprendre plus sur votre deen, ou que vous ayez des questions sur les différents groupes dans l\'Islam, ce voyage vous aidera.',
+            ur: 'الحمد للہ! چاہے آپ اپنے ایمان کو مضبوط کرنا چاہتے ہیں، اپنے دین کے بارے میں مزید جاننا چاہتے ہیں، یا اسلام کے مختلف گروہوں کے بارے میں سوالات ہیں، یہ سفر آپ کی مدد کرے گا۔',
+            tr: 'Elhamdülillah! İster imanınızı güçlendirmek, ister dininiz hakkında daha fazla öğrenmek, ister İslam içindeki farklı gruplar hakkında sorularınız olsun, bu yolculuk size yardımcı olacak.',
+            id: 'Alhamdulillah! Apakah Anda ingin memperkuat iman, mempelajari lebih lanjut tentang agama Anda, atau memiliki pertanyaan tentang kelompok berbeda dalam Islam, perjalanan ini akan membantu Anda.'
+        },
         verse: {
             arabic: 'وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا',
-            translation: 'And hold firmly to the rope of Allah all together and do not become divided.',
+            translation: {
+                en: 'And hold firmly to the rope of Allah all together and do not become divided.',
+                ar: 'واعتصموا بحبل الله جميعاً ولا تفرقوا.',
+                fr: 'Et cramponnez-vous tous ensemble au câble d\'Allah et ne soyez pas divisés.',
+                ur: 'اور سب مل کر اللہ کی رسی کو مضبوطی سے پکڑو اور تفرقہ نہ کرو۔',
+                tr: 'Hep birlikte Allah\'ın ipine sımsıkı sarılın ve ayrılmayın.',
+                id: 'Dan berpeganglah kamu semuanya kepada tali Allah, dan janganlah kamu bercerai berai.'
+            },
             reference: 'Surah Ali Imran 3:103'
         },
         options: [
-            { label: 'I want to strengthen my practice', next: 'strengthen_practice' },
-            { label: 'I have questions about Sunni/Shia differences', next: 'sunni_shia_intro' },
-            { label: 'I\'m Shia and curious about Sunnah', next: 'shia_to_sunnah' },
-            { label: 'I want to understand authentic Islam', next: 'authentic_islam' },
-            { label: 'Questions about innovation (Bid\'ah)', next: 'bidah_intro' },
-            { label: 'Deep theological questions', next: 'theological_deep' }
+            { label: { en: 'I want to strengthen my practice', ar: 'أريد تقوية عبادتي', fr: 'Je veux renforcer ma pratique', ur: 'میں اپنی عبادت کو مضبوط کرنا چاہتا ہوں', tr: 'İbadetimi güçlendirmek istiyorum', id: 'Saya ingin memperkuat ibadah saya' }, next: 'strengthen_practice' },
+            { label: { en: 'I have questions about Sunni/Shia differences', ar: 'لدي أسئلة حول الفروق بين السنة والشيعة', fr: 'J\'ai des questions sur les différences Sunnite/Chiite', ur: 'مجھے سنی/شیعہ فرق کے بارے میں سوالات ہیں', tr: 'Sünni/Şii farklılıkları hakkında sorularım var', id: 'Saya punya pertanyaan tentang perbedaan Sunni/Syiah' }, next: 'sunni_shia_intro' },
+            { label: { en: 'I\'m Shia and curious about Sunnah', ar: 'أنا شيعي وأريد معرفة السنة', fr: 'Je suis Chiite et curieux de la Sunnah', ur: 'میں شیعہ ہوں اور سنت کے بارے میں جاننا چاہتا ہوں', tr: 'Şii\'yim ve Sünnet hakkında merak ediyorum', id: 'Saya Syiah dan ingin tahu tentang Sunnah' }, next: 'shia_to_sunnah' },
+            { label: { en: 'I want to understand authentic Islam', ar: 'أريد فهم الإسلام الصحيح', fr: 'Je veux comprendre l\'Islam authentique', ur: 'میں صحیح اسلام کو سمجھنا چاہتا ہوں', tr: 'Otantik İslam\'ı anlamak istiyorum', id: 'Saya ingin memahami Islam yang otentik' }, next: 'authentic_islam' },
+            { label: { en: 'Questions about innovation (Bid\'ah)', ar: 'أسئلة حول البدعة', fr: 'Questions sur l\'innovation (Bid\'ah)', ur: 'بدعت کے بارے میں سوالات', tr: 'Bid\'at hakkında sorular', id: 'Pertanyaan tentang bid\'ah' }, next: 'bidah_intro' },
+            { label: { en: 'Deep theological questions', ar: 'أسئلة عقدية عميقة', fr: 'Questions théologiques profondes', ur: 'گہرے عقائدی سوالات', tr: 'Derin teolojik sorular', id: 'Pertanyaan teologis mendalam' }, next: 'theological_deep' }
         ]
     },
 
     // Strengthen Practice
     strengthen_practice: {
         id: 'strengthen_practice',
-        title: 'Strengthening Your Islam',
-        content: 'The Prophet ﷺ said: "The best of you are those who learn the Quran and teach it." Strengthening your Islam starts with knowledge, consistent worship, and following the Sunnah of the Prophet ﷺ.',
+        title: {
+            en: 'Strengthening Your Islam',
+            ar: 'تقوية إسلامك',
+            fr: 'Renforcer Votre Islam',
+            ur: 'اپنے اسلام کو مضبوط کرنا',
+            tr: 'İslam\'ınızı Güçlendirmek',
+            id: 'Memperkuat Islam Anda'
+        },
+        content: {
+            en: 'The Prophet ﷺ said: "The best of you are those who learn the Quran and teach it." Strengthening your Islam starts with knowledge, consistent worship, and following the Sunnah of the Prophet ﷺ.',
+            ar: 'قال النبي ﷺ: "خيركم من تعلم القرآن وعلمه." تقوية إسلامك تبدأ بالعلم والعبادة المستمرة واتباع سنة النبي ﷺ.',
+            fr: 'Le Prophète ﷺ a dit: "Les meilleurs d\'entre vous sont ceux qui apprennent le Coran et l\'enseignent." Renforcer votre Islam commence par la connaissance, l\'adoration constante et suivre la Sunnah du Prophète ﷺ.',
+            ur: 'نبی ﷺ نے فرمایا: "تم میں سے بہترین وہ ہے جو قرآن سیکھے اور سکھائے۔" اپنے اسلام کو مضبوط کرنا علم، مستقل عبادت اور نبی ﷺ کی سنت کی پیروی سے شروع ہوتا ہے۔',
+            tr: 'Peygamber ﷺ buyurdu: "Sizin en hayırlınız Kur\'an\'ı öğrenen ve öğretendir." İslam\'ınızı güçlendirmek ilim, sürekli ibadet ve Peygamber\'in ﷺ Sünnetine uymakla başlar.',
+            id: 'Nabi ﷺ bersabda: "Sebaik-baik kalian adalah yang mempelajari Al-Quran dan mengajarkannya." Memperkuat Islam Anda dimulai dengan ilmu, ibadah yang konsisten, dan mengikuti Sunnah Nabi ﷺ.'
+        },
         verse: {
             arabic: 'وَمَا آتَاكُمُ الرَّسُولُ فَخُذُوهُ وَمَا نَهَاكُمْ عَنْهُ فَانتَهُوا',
-            translation: 'And whatever the Messenger has given you - take; and what he has forbidden you - refrain from.',
+            translation: {
+                en: 'And whatever the Messenger has given you - take; and what he has forbidden you - refrain from.',
+                ar: 'وما آتاكم الرسول فخذوه وما نهاكم عنه فانتهوا.',
+                fr: 'Ce que le Messager vous donne, prenez-le; et ce qu\'il vous interdit, abstenez-vous en.',
+                ur: 'اور رسول جو کچھ تمہیں دے لے لو اور جس سے منع کرے رک جاؤ۔',
+                tr: 'Peygamber size ne verdiyse onu alın, size neyi yasakladıysa ondan sakının.',
+                id: 'Apa yang diberikan Rasul kepadamu maka terimalah, dan apa yang dilarangnya bagimu maka tinggalkanlah.'
+            },
             reference: 'Surah Al-Hashr 59:7'
         },
         options: [
-            { label: 'Learn about the Five Pillars', next: 'islam_basics' },
-            { label: 'Understand the importance of Sunnah', next: 'about_sunnah' },
-            { label: 'Learn about the Companions', next: 'about_sahaba' },
-            { label: 'Avoid innovations in religion', next: 'bidah_intro' }
+            { label: { en: 'Learn about the Five Pillars', ar: 'تعرف على أركان الإسلام الخمسة', fr: 'Apprendre les Cinq Piliers', ur: 'اسلام کے پانچ ارکان جانیں', tr: 'Beş Şartı öğren', id: 'Pelajari Lima Rukun' }, next: 'islam_basics' },
+            { label: { en: 'Understand the importance of Sunnah', ar: 'فهم أهمية السنة', fr: 'Comprendre l\'importance de la Sunnah', ur: 'سنت کی اہمیت سمجھیں', tr: 'Sünnetin önemini anla', id: 'Pahami pentingnya Sunnah' }, next: 'about_sunnah' },
+            { label: { en: 'Learn about the Companions', ar: 'تعرف على الصحابة', fr: 'Apprendre sur les Compagnons', ur: 'صحابہ کے بارے میں جانیں', tr: 'Sahabeler hakkında öğren', id: 'Pelajari tentang Sahabat' }, next: 'about_sahaba' },
+            { label: { en: 'Avoid innovations in religion', ar: 'تجنب البدع في الدين', fr: 'Éviter les innovations religieuses', ur: 'دین میں بدعات سے بچیں', tr: 'Dindeki bid\'atlerden kaçın', id: 'Hindari bid\'ah dalam agama' }, next: 'bidah_intro' }
         ]
     },
 
@@ -731,52 +794,115 @@ const journeyData = {
     // Branch: Believes in God
     believes_god: {
         id: 'believes_god',
-        title: 'You Believe in a Creator',
-        content: 'That\'s wonderful! Belief in One God is the foundation of Islam. Muslims believe in the same God worshipped by Abraham, Moses, and Jesus - called "Allah" in Arabic (which simply means "The God").',
+        title: {
+            en: 'You Believe in a Creator',
+            ar: 'أنت تؤمن بالخالق',
+            fr: 'Vous Croyez en un Créateur',
+            ur: 'آپ خالق پر ایمان رکھتے ہیں',
+            tr: 'Bir Yaratıcıya İnanıyorsunuz',
+            id: 'Anda Percaya pada Pencipta'
+        },
+        content: {
+            en: 'That\'s wonderful! Belief in One God is the foundation of Islam. Muslims believe in the same God worshipped by Abraham, Moses, and Jesus - called "Allah" in Arabic (which simply means "The God").',
+            ar: 'هذا رائع! الإيمان بالله الواحد هو أساس الإسلام. يؤمن المسلمون بنفس الإله الذي عبده إبراهيم وموسى وعيسى - يسمى "الله" بالعربية.',
+            fr: 'C\'est merveilleux! La croyance en un Dieu Unique est le fondement de l\'Islam. Les musulmans croient au même Dieu adoré par Abraham, Moïse et Jésus - appelé "Allah" en arabe.',
+            ur: 'یہ بہت اچھی بات ہے! ایک اللہ پر ایمان اسلام کی بنیاد ہے۔ مسلمان اسی خدا پر ایمان رکھتے ہیں جس کی عبادت ابراہیم، موسیٰ اور عیسیٰ نے کی - عربی میں "اللہ" کہلاتا ہے۔',
+            tr: 'Bu harika! Tek Tanrı\'ya inanç İslam\'ın temelidir. Müslümanlar İbrahim, Musa ve İsa\'nın ibadet ettiği aynı Tanrı\'ya inanır - Arapça\'da "Allah" olarak adlandırılır.',
+            id: 'Itu luar biasa! Kepercayaan pada Tuhan Yang Esa adalah dasar Islam. Muslim percaya pada Tuhan yang sama yang disembah oleh Ibrahim, Musa, dan Isa - disebut "Allah" dalam bahasa Arab.'
+        },
         verse: {
             arabic: 'قُلْ هُوَ اللَّهُ أَحَدٌ',
-            translation: 'Say: He is Allah, the One.',
+            translation: {
+                en: 'Say: He is Allah, the One.',
+                ar: 'قل هو الله أحد.',
+                fr: 'Dis: Il est Allah, l\'Unique.',
+                ur: 'کہو: وہ اللہ ہے، ایک۔',
+                tr: 'De ki: O, Allah\'tır, bir tektir.',
+                id: 'Katakanlah: Dialah Allah, Yang Maha Esa.'
+            },
             reference: 'Surah Al-Ikhlas 112:1'
         },
         options: [
-            { label: 'I believe God sends prophets to guide humanity', next: 'believes_prophets' },
-            { label: 'I\'m not sure about prophets', next: 'learn_prophets' },
-            { label: 'What makes Islam different?', next: 'islam_unique' },
-            { label: 'What is the purpose of life?', next: 'purpose_of_life' }
+            { label: { en: 'I believe God sends prophets to guide humanity', ar: 'أؤمن أن الله يرسل الأنبياء لهداية البشرية', fr: 'Je crois que Dieu envoie des prophètes pour guider l\'humanité', ur: 'میں مانتا ہوں کہ اللہ انسانیت کی رہنمائی کے لیے نبی بھیجتا ہے', tr: 'Tanrı\'nın insanlığa rehberlik için peygamberler gönderdiğine inanıyorum', id: 'Saya percaya Tuhan mengutus nabi untuk membimbing umat manusia' }, next: 'believes_prophets' },
+            { label: { en: 'I\'m not sure about prophets', ar: 'لست متأكداً بشأن الأنبياء', fr: 'Je ne suis pas sûr des prophètes', ur: 'مجھے نبیوں کے بارے میں یقین نہیں', tr: 'Peygamberler konusunda emin değilim', id: 'Saya tidak yakin tentang nabi' }, next: 'learn_prophets' },
+            { label: { en: 'What makes Islam different?', ar: 'ما الذي يميز الإسلام؟', fr: 'Qu\'est-ce qui rend l\'Islam différent?', ur: 'اسلام کو کیا منفرد بناتا ہے؟', tr: 'İslam\'ı farklı kılan nedir?', id: 'Apa yang membuat Islam berbeda?' }, next: 'islam_unique' },
+            { label: { en: 'What is the purpose of life?', ar: 'ما هو الغرض من الحياة؟', fr: 'Quel est le but de la vie?', ur: 'زندگی کا مقصد کیا ہے؟', tr: 'Hayatın amacı nedir?', id: 'Apa tujuan hidup?' }, next: 'purpose_of_life' }
         ]
     },
 
     // Purpose of Life
     purpose_of_life: {
         id: 'purpose_of_life',
-        title: 'Why Are We Here?',
-        content: 'Islam answers the fundamental question of existence clearly: We were created to know and worship Allah. This worship isn\'t just prayer - it\'s living a life of purpose, gratitude, justice, and preparation for the eternal life to come.',
+        title: {
+            en: 'Why Are We Here?',
+            ar: 'لماذا نحن هنا؟',
+            fr: 'Pourquoi Sommes-Nous Ici?',
+            ur: 'ہم یہاں کیوں ہیں؟',
+            tr: 'Neden Buradayız?',
+            id: 'Mengapa Kita Di Sini?'
+        },
+        content: {
+            en: 'Islam answers the fundamental question of existence clearly: We were created to know and worship Allah. This worship isn\'t just prayer - it\'s living a life of purpose, gratitude, justice, and preparation for the eternal life to come.',
+            ar: 'يجيب الإسلام على السؤال الأساسي للوجود بوضوح: خُلقنا لنعرف الله ونعبده. هذه العبادة ليست مجرد صلاة - إنها حياة هادفة، شكر، عدل، واستعداد للحياة الأبدية القادمة.',
+            fr: 'L\'Islam répond clairement à la question fondamentale de l\'existence: Nous avons été créés pour connaître et adorer Allah. Cette adoration n\'est pas que la prière - c\'est vivre une vie de but, de gratitude, de justice et de préparation pour la vie éternelle.',
+            ur: 'اسلام وجود کے بنیادی سوال کا واضح جواب دیتا ہے: ہمیں اللہ کو جاننے اور اس کی عبادت کے لیے پیدا کیا گیا۔ یہ عبادت صرف نماز نہیں - یہ مقصد، شکرگزاری، انصاف اور ابدی زندگی کی تیاری کی زندگی ہے۔',
+            tr: 'İslam varoluşun temel sorusunu açıkça cevaplar: Allah\'ı tanımak ve O\'na ibadet etmek için yaratıldık. Bu ibadet sadece namaz değil - amaç, şükür, adalet ve ebedi hayata hazırlık ile dolu bir hayattır.',
+            id: 'Islam menjawab pertanyaan fundamental keberadaan dengan jelas: Kita diciptakan untuk mengenal dan menyembah Allah. Ibadah ini bukan hanya shalat - ini adalah hidup dengan tujuan, syukur, keadilan, dan persiapan untuk kehidupan kekal.'
+        },
         verse: {
             arabic: 'وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ',
-            translation: 'And I did not create the jinn and mankind except to worship Me.',
+            translation: {
+                en: 'And I did not create the jinn and mankind except to worship Me.',
+                ar: 'وما خلقت الجن والإنس إلا ليعبدون.',
+                fr: 'Je n\'ai créé les djinns et les hommes que pour qu\'ils M\'adorent.',
+                ur: 'اور میں نے جن اور انسان کو صرف اپنی عبادت کے لیے پیدا کیا۔',
+                tr: 'Ben cinleri ve insanları ancak bana ibadet etsinler diye yarattım.',
+                id: 'Dan Aku tidak menciptakan jin dan manusia melainkan supaya mereka menyembah-Ku.'
+            },
             reference: 'Surah Adh-Dhariyat 51:56'
         },
         options: [
-            { label: 'What happens after death?', next: 'afterlife' },
-            { label: 'How do we worship?', next: 'islam_basics' },
-            { label: 'Tell me about prophets', next: 'believes_prophets' }
+            { label: { en: 'What happens after death?', ar: 'ماذا يحدث بعد الموت؟', fr: 'Que se passe-t-il après la mort?', ur: 'موت کے بعد کیا ہوتا ہے؟', tr: 'Ölümden sonra ne olur?', id: 'Apa yang terjadi setelah kematian?' }, next: 'afterlife' },
+            { label: { en: 'How do we worship?', ar: 'كيف نعبد الله؟', fr: 'Comment adorons-nous?', ur: 'ہم عبادت کیسے کریں؟', tr: 'Nasıl ibadet ederiz?', id: 'Bagaimana kita beribadah?' }, next: 'islam_basics' },
+            { label: { en: 'Tell me about prophets', ar: 'أخبرني عن الأنبياء', fr: 'Parlez-moi des prophètes', ur: 'مجھے انبیاء کے بارے میں بتائیں', tr: 'Peygamberler hakkında anlat', id: 'Ceritakan tentang nabi-nabi' }, next: 'believes_prophets' }
         ]
     },
 
     // Afterlife
     afterlife: {
         id: 'afterlife',
-        title: 'The Life After Death',
-        content: 'Islam teaches that this life is a test. After death, we will be resurrected and held accountable for our deeds. Those who believed and did good will enter Paradise - eternal bliss. Those who rejected truth and did evil face punishment. But Allah\'s mercy is vast.',
+        title: {
+            en: 'The Life After Death',
+            ar: 'الحياة بعد الموت',
+            fr: 'La Vie Après la Mort',
+            ur: 'موت کے بعد کی زندگی',
+            tr: 'Ölümden Sonraki Hayat',
+            id: 'Kehidupan Setelah Kematian'
+        },
+        content: {
+            en: 'Islam teaches that this life is a test. After death, we will be resurrected and held accountable for our deeds. Those who believed and did good will enter Paradise - eternal bliss. Those who rejected truth and did evil face punishment. But Allah\'s mercy is vast.',
+            ar: 'يعلمنا الإسلام أن هذه الحياة اختبار. بعد الموت، سنُبعث ونُحاسب على أعمالنا. الذين آمنوا وعملوا الصالحات يدخلون الجنة - النعيم الأبدي. أما الذين رفضوا الحق وعملوا الشر فيواجهون العقاب. لكن رحمة الله واسعة.',
+            fr: 'L\'Islam enseigne que cette vie est un test. Après la mort, nous serons ressuscités et tenus responsables de nos actes. Ceux qui ont cru et fait le bien entreront au Paradis - la félicité éternelle. Ceux qui ont rejeté la vérité font face au châtiment. Mais la miséricorde d\'Allah est vaste.',
+            ur: 'اسلام سکھاتا ہے کہ یہ زندگی ایک امتحان ہے۔ موت کے بعد، ہمیں اٹھایا جائے گا اور اپنے اعمال کا حساب دینا ہوگا۔ جو ایمان لائے اور نیکی کی وہ جنت میں داخل ہوں گے - ابدی خوشی۔ لیکن اللہ کی رحمت وسیع ہے۔',
+            tr: 'İslam bu hayatın bir sınav olduğunu öğretir. Ölümden sonra diriltileceğiz ve amellerimizden hesaba çekileceğiz. İman edip iyi işler yapanlar Cennete girecek - ebedi mutluluk. Ama Allah\'ın rahmeti geniştir.',
+            id: 'Islam mengajarkan bahwa kehidupan ini adalah ujian. Setelah kematian, kita akan dibangkitkan dan dimintai pertanggungjawaban atas perbuatan kita. Mereka yang beriman dan berbuat baik akan masuk Surga - kebahagiaan abadi. Tetapi rahmat Allah sangat luas.'
+        },
         verse: {
             arabic: 'كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ وَإِنَّمَا تُوَفَّوْنَ أُجُورَكُمْ يَوْمَ الْقِيَامَةِ',
-            translation: 'Every soul will taste death, and you will only be given your full compensation on the Day of Resurrection.',
+            translation: {
+                en: 'Every soul will taste death, and you will only be given your full compensation on the Day of Resurrection.',
+                ar: 'كل نفس ذائقة الموت وإنما توفون أجوركم يوم القيامة.',
+                fr: 'Toute âme goûtera la mort, et vous ne recevrez votre pleine rétribution que le Jour de la Résurrection.',
+                ur: 'ہر جان موت کا مزہ چکھے گی اور قیامت کے دن ہی تمہیں پورا بدلہ دیا جائے گا۔',
+                tr: 'Her nefis ölümü tadacaktır ve ancak kıyamet günü amellerinizin karşılığı size tam olarak verilecektir.',
+                id: 'Setiap jiwa akan merasakan kematian dan kamu akan diberikan balasanmu yang sempurna pada hari kiamat.'
+            },
             reference: 'Surah Ali Imran 3:185'
         },
         options: [
-            { label: 'How do I prepare for it?', next: 'islam_basics' },
-            { label: 'How does one achieve salvation?', next: 'salvation' },
-            { label: 'Continue learning', next: 'believes_prophets' }
+            { label: { en: 'How do I prepare for it?', ar: 'كيف أستعد لها؟', fr: 'Comment m\'y préparer?', ur: 'میں اس کے لیے کیسے تیاری کروں؟', tr: 'Nasıl hazırlanırım?', id: 'Bagaimana cara mempersiapkannya?' }, next: 'islam_basics' },
+            { label: { en: 'How does one achieve salvation?', ar: 'كيف يحقق المرء الخلاص؟', fr: 'Comment atteindre le salut?', ur: 'نجات کیسے حاصل ہوتی ہے؟', tr: 'Kurtuluş nasıl elde edilir?', id: 'Bagaimana cara mencapai keselamatan?' }, next: 'salvation' },
+            { label: { en: 'Continue learning', ar: 'استمر في التعلم', fr: 'Continuer à apprendre', ur: 'سیکھنا جاری رکھیں', tr: 'Öğrenmeye devam et', id: 'Lanjutkan belajar' }, next: 'believes_prophets' }
         ]
     },
 
@@ -953,18 +1079,39 @@ const journeyData = {
     // Unsure about God
     unsure_god: {
         id: 'unsure_god',
-        title: 'Questioning God\'s Existence',
-        content: 'It\'s okay to have questions - Islam encourages sincere inquiry. Let\'s think together: Everything that begins to exist has a cause. The universe began to exist. Therefore, the universe has a cause. This cause must be uncaused, timeless, and powerful.',
+        title: {
+            en: 'Questioning God\'s Existence',
+            ar: 'التساؤل عن وجود الله',
+            fr: 'Questionner l\'Existence de Dieu',
+            ur: 'اللہ کے وجود پر سوال',
+            tr: 'Tanrı\'nın Varlığını Sorgulamak',
+            id: 'Mempertanyakan Keberadaan Tuhan'
+        },
+        content: {
+            en: 'It\'s okay to have questions - Islam encourages sincere inquiry. Let\'s think together: Everything that begins to exist has a cause. The universe began to exist. Therefore, the universe has a cause. This cause must be uncaused, timeless, and powerful.',
+            ar: 'لا بأس بالتساؤل - الإسلام يشجع البحث الصادق. لنفكر معاً: كل شيء يبدأ في الوجود له سبب. الكون بدأ في الوجود. إذن الكون له سبب. هذا السبب يجب أن يكون غير مسبب، أزلي، وقدير.',
+            fr: 'C\'est normal d\'avoir des questions - l\'Islam encourage la recherche sincère. Réfléchissons ensemble: Tout ce qui commence à exister a une cause. L\'univers a commencé à exister. Donc l\'univers a une cause.',
+            ur: 'سوالات ہونا ٹھیک ہے - اسلام مخلصانہ تحقیق کی حوصلہ افزائی کرتا ہے۔ آئیں مل کر سوچیں: ہر چیز جو وجود میں آتی ہے اس کا ایک سبب ہوتا ہے۔ کائنات وجود میں آئی۔ لہذا کائنات کا ایک سبب ہے۔',
+            tr: 'Soru sormak sorun değil - İslam samimi araştırmayı teşvik eder. Birlikte düşünelim: Var olmaya başlayan her şeyin bir sebebi vardır. Evren var olmaya başladı. Dolayısıyla evrenin bir sebebi vardır.',
+            id: 'Tidak apa-apa memiliki pertanyaan - Islam mendorong penyelidikan yang tulus. Mari berpikir bersama: Segala sesuatu yang mulai ada memiliki penyebab. Alam semesta mulai ada. Oleh karena itu, alam semesta memiliki penyebab.'
+        },
         verse: {
             arabic: 'أَفَلَا يَنظُرُونَ إِلَى الْإِبِلِ كَيْفَ خُلِقَتْ',
-            translation: 'Do they not look at the camels - how they are created?',
+            translation: {
+                en: 'Do they not look at the camels - how they are created?',
+                ar: 'أفلا ينظرون إلى الإبل كيف خلقت؟',
+                fr: 'Ne regardent-ils pas les chameaux, comment ils ont été créés?',
+                ur: 'کیا وہ اونٹوں کو نہیں دیکھتے کہ کیسے پیدا کیے گئے؟',
+                tr: 'Develere bakmıyorlar mı, nasıl yaratıldılar?',
+                id: 'Maka apakah mereka tidak memperhatikan unta bagaimana ia diciptakan?'
+            },
             reference: 'Surah Al-Ghashiyah 88:17'
         },
         options: [
-            { label: 'Tell me more about evidence for God', next: 'evidence_god' },
-            { label: 'What about science and Islam?', next: 'science_islam' },
-            { label: 'The design argument', next: 'design_argument' },
-            { label: 'I\'m starting to believe, what\'s next?', next: 'believes_god' }
+            { label: { en: 'Tell me more about evidence for God', ar: 'أخبرني المزيد عن أدلة وجود الله', fr: 'Dites-moi plus sur les preuves de Dieu', ur: 'مجھے اللہ کے وجود کے ثبوت کے بارے میں مزید بتائیں', tr: 'Tanrı\'nın varlığına dair kanıtları anlat', id: 'Ceritakan lebih banyak tentang bukti keberadaan Tuhan' }, next: 'evidence_god' },
+            { label: { en: 'What about science and Islam?', ar: 'ماذا عن العلم والإسلام؟', fr: 'Qu\'en est-il de la science et de l\'Islam?', ur: 'سائنس اور اسلام کے بارے میں کیا؟', tr: 'Bilim ve İslam hakkında ne dersiniz?', id: 'Bagaimana dengan sains dan Islam?' }, next: 'science_islam' },
+            { label: { en: 'The design argument', ar: 'حجة التصميم', fr: 'L\'argument du dessein', ur: 'ڈیزائن کی دلیل', tr: 'Tasarım argümanı', id: 'Argumen desain' }, next: 'design_argument' },
+            { label: { en: 'I\'m starting to believe, what\'s next?', ar: 'بدأت أؤمن، ما التالي؟', fr: 'Je commence à croire, quelle est la suite?', ur: 'میں ایمان لانا شروع کر رہا ہوں، آگے کیا؟', tr: 'İnanmaya başlıyorum, sırada ne var?', id: 'Saya mulai percaya, apa selanjutnya?' }, next: 'believes_god' }
         ]
     },
 
@@ -1161,18 +1308,39 @@ const journeyData = {
     // Atheist Start
     atheist_start: {
         id: 'atheist_start',
-        title: 'For the Thoughtful Skeptic',
-        content: 'We respect your position and welcome honest dialogue. Let\'s explore together: The existence of objective morality, consciousness, the origin of the universe, and the remarkable precision of life all point toward something beyond the material.',
+        title: {
+            en: 'For the Thoughtful Skeptic',
+            ar: 'للمشكك المفكر',
+            fr: 'Pour le Sceptique Réfléchi',
+            ur: 'سوچنے والے شکی کے لیے',
+            tr: 'Düşünceli Şüpheciler İçin',
+            id: 'Untuk Skeptis yang Bijaksana'
+        },
+        content: {
+            en: 'We respect your position and welcome honest dialogue. Let\'s explore together: The existence of objective morality, consciousness, the origin of the universe, and the remarkable precision of life all point toward something beyond the material.',
+            ar: 'نحترم موقفك ونرحب بالحوار الصادق. لنستكشف معاً: وجود الأخلاق الموضوعية، والوعي، وأصل الكون، ودقة الحياة المذهلة كلها تشير إلى شيء وراء المادة.',
+            fr: 'Nous respectons votre position et accueillons un dialogue honnête. Explorons ensemble: L\'existence de la moralité objective, la conscience, l\'origine de l\'univers et la précision remarquable de la vie pointent tous vers quelque chose au-delà du matériel.',
+            ur: 'ہم آپ کے موقف کا احترام کرتے ہیں اور ایمانداری سے گفتگو کا خیرمقدم کرتے ہیں۔ آئیں مل کر جانیں: معروضی اخلاقیات، شعور، کائنات کی ابتدا، اور زندگی کی حیرت انگیز درستگی سب کچھ مادے سے بالاتر کی طرف اشارہ کرتے ہیں۔',
+            tr: 'Tutumunuza saygı duyuyor ve dürüst diyaloğu memnuniyetle karşılıyoruz. Birlikte keşfedelim: Nesnel ahlakın varlığı, bilinç, evrenin kökeni ve yaşamın dikkat çekici hassasiyeti hepsi maddenin ötesinde bir şeye işaret ediyor.',
+            id: 'Kami menghormati posisi Anda dan menyambut dialog jujur. Mari kita jelajahi bersama: Keberadaan moralitas objektif, kesadaran, asal usul alam semesta, dan ketepatan kehidupan yang luar biasa semuanya menunjuk ke sesuatu di luar materi.'
+        },
         verse: {
             arabic: 'أَمْ خُلِقُوا مِنْ غَيْرِ شَيْءٍ أَمْ هُمُ الْخَالِقُونَ',
-            translation: 'Were they created by nothing, or were they the creators [of themselves]?',
+            translation: {
+                en: 'Were they created by nothing, or were they the creators [of themselves]?',
+                ar: 'أم خلقوا من غير شيء أم هم الخالقون؟',
+                fr: 'Ont-ils été créés à partir de rien ou sont-ils les créateurs?',
+                ur: 'کیا یہ بغیر کسی کے پیدا ہوئے یا یہ خود خالق ہیں؟',
+                tr: 'Yoksa hiçbir şey olmaksızın mı yaratıldılar, yoksa yaratıcılar onlar mı?',
+                id: 'Apakah mereka diciptakan tanpa sesuatu pun atau mereka yang menciptakan?'
+            },
             reference: 'Surah At-Tur 52:35'
         },
         options: [
-            { label: 'Show me evidence for God', next: 'evidence_god' },
-            { label: 'What about science?', next: 'science_islam' },
-            { label: 'What does Islam teach about morality?', next: 'morality' },
-            { label: 'The design argument', next: 'design_argument' }
+            { label: { en: 'Show me evidence for God', ar: 'أرني الدليل على وجود الله', fr: 'Montrez-moi les preuves de Dieu', ur: 'مجھے اللہ کے وجود کا ثبوت دکھائیں', tr: 'Tanrı\'nın varlığına dair kanıt göster', id: 'Tunjukkan bukti keberadaan Tuhan' }, next: 'evidence_god' },
+            { label: { en: 'What about science?', ar: 'ماذا عن العلم؟', fr: 'Qu\'en est-il de la science?', ur: 'سائنس کے بارے میں کیا؟', tr: 'Bilim ne olacak?', id: 'Bagaimana dengan sains?' }, next: 'science_islam' },
+            { label: { en: 'What does Islam teach about morality?', ar: 'ماذا يعلم الإسلام عن الأخلاق؟', fr: 'Qu\'enseigne l\'Islam sur la moralité?', ur: 'اسلام اخلاقیات کے بارے میں کیا سکھاتا ہے؟', tr: 'İslam ahlak hakkında ne öğretir?', id: 'Apa yang Islam ajarkan tentang moralitas?' }, next: 'morality' },
+            { label: { en: 'The design argument', ar: 'حجة التصميم', fr: 'L\'argument du dessein', ur: 'ڈیزائن کی دلیل', tr: 'Tasarım argümanı', id: 'Argumen desain' }, next: 'design_argument' }
         ]
     },
 
@@ -1195,19 +1363,40 @@ const journeyData = {
     // Other Religion Branch
     other_religion: {
         id: 'other_religion',
-        title: 'Exploring Truth Together',
-        content: 'We respect all sincere seekers of truth. Islam teaches that God sent prophets to all nations throughout history. Let us share what unites us and respectfully discuss our differences.',
+        title: {
+            en: 'Exploring Truth Together',
+            ar: 'استكشاف الحقيقة معاً',
+            fr: 'Explorer la Vérité Ensemble',
+            ur: 'مل کر حقیقت کی تلاش',
+            tr: 'Birlikte Gerçeği Keşfetmek',
+            id: 'Menjelajahi Kebenaran Bersama'
+        },
+        content: {
+            en: 'We respect all sincere seekers of truth. Islam teaches that God sent prophets to all nations throughout history. Let us share what unites us and respectfully discuss our differences.',
+            ar: 'نحترم جميع الباحثين الصادقين عن الحقيقة. يعلم الإسلام أن الله أرسل الأنبياء إلى جميع الأمم عبر التاريخ. دعونا نشارك ما يوحدنا ونناقش خلافاتنا باحترام.',
+            fr: 'Nous respectons tous les chercheurs sincères de vérité. L\'Islam enseigne que Dieu a envoyé des prophètes à toutes les nations. Partageons ce qui nous unit et discutons respectueusement de nos différences.',
+            ur: 'ہم تمام مخلص حق کے متلاشیوں کا احترام کرتے ہیں۔ اسلام سکھاتا ہے کہ اللہ نے تمام اقوام کو نبی بھیجے۔ آئیں ہم مل کر وہ بات کریں جو ہمیں جوڑتی ہے اور احترام سے اپنے اختلافات پر بات کریں۔',
+            tr: 'Tüm samimi hakikat arayıcılarına saygı duyuyoruz. İslam, Allah\'ın tarih boyunca tüm milletlere peygamberler gönderdiğini öğretir. Bizi birleştiren şeyleri paylaşalım ve farklılıklarımızı saygıyla tartışalım.',
+            id: 'Kami menghormati semua pencari kebenaran yang tulus. Islam mengajarkan bahwa Allah mengutus nabi-nabi kepada semua bangsa sepanjang sejarah. Mari kita berbagi apa yang menyatukan kita dan mendiskusikan perbedaan kita dengan hormat.'
+        },
         verse: {
             arabic: 'قُلْ يَا أَهْلَ الْكِتَابِ تَعَالَوْا إِلَىٰ كَلِمَةٍ سَوَاءٍ بَيْنَنَا وَبَيْنَكُمْ',
-            translation: 'Say, "O People of the Scripture, come to a word that is equitable between us and you - that we will not worship except Allah."',
+            translation: {
+                en: 'Say, "O People of the Scripture, come to a word that is equitable between us and you - that we will not worship except Allah."',
+                ar: 'قل يا أهل الكتاب تعالوا إلى كلمة سواء بيننا وبينكم ألا نعبد إلا الله.',
+                fr: 'Dis: "Ô gens du Livre, venez à une parole commune entre nous et vous: que nous n\'adorions qu\'Allah."',
+                ur: 'کہو: اے اہل کتاب! ایک ایسی بات کی طرف آؤ جو ہم میں اور تم میں برابر ہے - کہ ہم اللہ کے سوا کسی کی عبادت نہ کریں۔',
+                tr: 'De ki: "Ey Ehli Kitap! Bizimle sizin aranızda eşit olan bir söze gelin: Allah\'tan başkasına ibadet etmeyelim."',
+                id: 'Katakanlah: "Wahai Ahli Kitab, marilah kepada kalimat yang sama antara kami dan kalian - bahwa kita tidak menyembah kecuali Allah."'
+            },
             reference: 'Surah Ali Imran 3:64'
         },
         options: [
-            { label: 'I\'m Christian', next: 'christian_path' },
-            { label: 'I\'m Jewish', next: 'jewish_path' },
-            { label: 'I\'m Hindu', next: 'hindu_path' },
-            { label: 'I\'m Buddhist', next: 'buddhist_path' },
-            { label: 'I follow another path', next: 'other_path' }
+            { label: { en: 'I\'m Christian', ar: 'أنا مسيحي', fr: 'Je suis Chrétien', ur: 'میں عیسائی ہوں', tr: 'Ben Hristiyanım', id: 'Saya Kristen' }, next: 'christian_path' },
+            { label: { en: 'I\'m Jewish', ar: 'أنا يهودي', fr: 'Je suis Juif', ur: 'میں یہودی ہوں', tr: 'Ben Yahudiyim', id: 'Saya Yahudi' }, next: 'jewish_path' },
+            { label: { en: 'I\'m Hindu', ar: 'أنا هندوسي', fr: 'Je suis Hindou', ur: 'میں ہندو ہوں', tr: 'Ben Hinduyum', id: 'Saya Hindu' }, next: 'hindu_path' },
+            { label: { en: 'I\'m Buddhist', ar: 'أنا بوذي', fr: 'Je suis Bouddhiste', ur: 'میں بدھ مت ہوں', tr: 'Ben Budistim', id: 'Saya Buddha' }, next: 'buddhist_path' },
+            { label: { en: 'I follow another path', ar: 'أتبع طريقاً آخر', fr: 'Je suis une autre voie', ur: 'میں کسی اور راستے پر ہوں', tr: 'Başka bir yol izliyorum', id: 'Saya mengikuti jalan lain' }, next: 'other_path' }
         ]
     },
 
@@ -1350,17 +1539,38 @@ const journeyData = {
     // Islam Basics
     islam_basics: {
         id: 'islam_basics',
-        title: 'The Basics of Islam',
-        content: 'Islam rests on Five Pillars: 1) Shahada - Declaration of faith, 2) Salah - Five daily prayers, 3) Zakat - Charity, 4) Sawm - Fasting in Ramadan, 5) Hajj - Pilgrimage to Mecca.',
+        title: {
+            en: 'The Basics of Islam',
+            ar: 'أساسيات الإسلام',
+            fr: 'Les Bases de l\'Islam',
+            ur: 'اسلام کی بنیادیں',
+            tr: 'İslam\'ın Temelleri',
+            id: 'Dasar-Dasar Islam'
+        },
+        content: {
+            en: 'Islam rests on Five Pillars: 1) Shahada - Declaration of faith, 2) Salah - Five daily prayers, 3) Zakat - Charity, 4) Sawm - Fasting in Ramadan, 5) Hajj - Pilgrimage to Mecca.',
+            ar: 'يقوم الإسلام على خمسة أركان: ١) الشهادة - شهادة أن لا إله إلا الله، ٢) الصلاة - الصلوات الخمس، ٣) الزكاة - الصدقة، ٤) الصوم - صيام رمضان، ٥) الحج - الحج إلى مكة.',
+            fr: 'L\'Islam repose sur Cinq Piliers: 1) Shahada - Déclaration de foi, 2) Salah - Cinq prières quotidiennes, 3) Zakat - Charité, 4) Sawm - Jeûne du Ramadan, 5) Hajj - Pèlerinage à la Mecque.',
+            ur: 'اسلام پانچ ارکان پر قائم ہے: ١) شہادت - ایمان کا اقرار، ٢) صلاۃ - پانچ وقت کی نماز، ٣) زکاۃ - صدقہ، ٤) صوم - رمضان کے روزے، ٥) حج - مکہ کی زیارت۔',
+            tr: 'İslam Beş Şart üzerine kuruludur: 1) Şehadet - İman ikrarı, 2) Namaz - Beş vakit namaz, 3) Zekat - Sadaka, 4) Oruç - Ramazan orucu, 5) Hac - Mekke\'ye hac.',
+            id: 'Islam berdiri di atas Lima Rukun: 1) Syahadat - Pengakuan iman, 2) Shalat - Lima waktu shalat, 3) Zakat - Sedekah, 4) Puasa - Puasa Ramadan, 5) Haji - Ziarah ke Mekah.'
+        },
         verse: {
             arabic: 'الْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِي وَرَضِيتُ لَكُمُ الْإِسْلَامَ دِينًا',
-            translation: 'This day I have perfected for you your religion and completed My favor upon you.',
+            translation: {
+                en: 'This day I have perfected for you your religion and completed My favor upon you.',
+                ar: 'اليوم أكملت لكم دينكم وأتممت عليكم نعمتي ورضيت لكم الإسلام ديناً.',
+                fr: 'Aujourd\'hui, J\'ai parachevé pour vous votre religion et accompli sur vous Mon bienfait.',
+                ur: 'آج میں نے تمہارے لیے تمہارا دین مکمل کر دیا اور تم پر اپنی نعمت پوری کر دی۔',
+                tr: 'Bugün sizin için dininizi kemale erdirdim, size nimetimi tamamladım.',
+                id: 'Pada hari ini telah Kusempurnakan untuk kamu agamamu dan telah Kucukupkan kepadamu nikmat-Ku.'
+            },
             reference: 'Surah Al-Ma\'idah 5:3'
         },
         options: [
-            { label: 'Tell me about the Six Articles of Faith', next: 'six_articles' },
-            { label: 'What is Sunnah?', next: 'about_sunnah' },
-            { label: 'How do I become Muslim?', next: 'become_muslim' }
+            { label: { en: 'Tell me about the Six Articles of Faith', ar: 'أخبرني عن أركان الإيمان الستة', fr: 'Parlez-moi des Six Articles de Foi', ur: 'مجھے ایمان کے چھ ارکان کے بارے میں بتائیں', tr: 'İmanın Altı Şartını anlat', id: 'Ceritakan tentang Enam Rukun Iman' }, next: 'six_articles' },
+            { label: { en: 'What is Sunnah?', ar: 'ما هي السنة؟', fr: 'Qu\'est-ce que la Sunnah?', ur: 'سنت کیا ہے؟', tr: 'Sünnet nedir?', id: 'Apa itu Sunnah?' }, next: 'about_sunnah' },
+            { label: { en: 'How do I become Muslim?', ar: 'كيف أصبح مسلماً؟', fr: 'Comment devenir Musulman?', ur: 'میں مسلمان کیسے بنوں؟', tr: 'Nasıl Müslüman olurum?', id: 'Bagaimana cara menjadi Muslim?' }, next: 'become_muslim' }
         ]
     },
 
@@ -1465,16 +1675,37 @@ const journeyData = {
     // Become Muslim
     become_muslim: {
         id: 'become_muslim',
-        title: 'Embracing Islam',
-        content: 'To become Muslim, sincerely declare the Shahada: "Ash-hadu an la ilaha illa Allah, wa ash-hadu anna Muhammadan rasul Allah" (I bear witness there is no god but Allah, and Muhammad is His messenger). After this, gradually learn prayer, Quran, and good character.',
+        title: {
+            en: 'Embracing Islam',
+            ar: 'اعتناق الإسلام',
+            fr: 'Embrasser l\'Islam',
+            ur: 'اسلام قبول کرنا',
+            tr: 'İslam\'ı Kucaklamak',
+            id: 'Memeluk Islam'
+        },
+        content: {
+            en: 'To become Muslim, sincerely declare the Shahada: "Ash-hadu an la ilaha illa Allah, wa ash-hadu anna Muhammadan rasul Allah" (I bear witness there is no god but Allah, and Muhammad is His messenger). After this, gradually learn prayer, Quran, and good character.',
+            ar: 'لتصبح مسلماً، أعلن الشهادة بإخلاص: "أشهد أن لا إله إلا الله وأشهد أن محمداً رسول الله". بعد ذلك، تعلم تدريجياً الصلاة والقرآن وحسن الخلق.',
+            fr: 'Pour devenir Musulman, déclarez sincèrement la Shahada: "Ash-hadu an la ilaha illa Allah, wa ash-hadu anna Muhammadan rasul Allah" (J\'atteste qu\'il n\'y a pas de dieu sauf Allah et que Muhammad est Son messager). Après cela, apprenez progressivement la prière, le Coran et le bon caractère.',
+            ur: 'مسلمان بننے کے لیے، خلوص سے شہادت کا اقرار کریں: "اشہد ان لا الہ الا اللہ و اشہد ان محمداً رسول اللہ" (میں گواہی دیتا ہوں کہ اللہ کے سوا کوئی معبود نہیں اور محمد اللہ کے رسول ہیں)۔ اس کے بعد، آہستہ آہستہ نماز، قرآن اور اچھے اخلاق سیکھیں۔',
+            tr: 'Müslüman olmak için Şehadeti içtenlikle ilan edin: "Eşhedü en la ilahe illallah ve eşhedü enne Muhammeden resulullah" (Allah\'tan başka ilah olmadığına ve Muhammed\'in O\'nun elçisi olduğuna şehadet ederim). Bundan sonra namaz, Kur\'an ve güzel ahlak öğrenin.',
+            id: 'Untuk menjadi Muslim, ucapkan Syahadat dengan tulus: "Asyhadu an la ilaha illallah, wa asyhadu anna Muhammadan rasulullah" (Saya bersaksi tidak ada tuhan selain Allah dan Muhammad adalah utusan-Nya). Setelah itu, pelajari shalat, Al-Quran, dan akhlak mulia secara bertahap.'
+        },
         verse: {
             arabic: 'أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ',
-            translation: 'I bear witness that there is no god but Allah, and Muhammad is the Messenger of Allah.',
+            translation: {
+                en: 'I bear witness that there is no god but Allah, and Muhammad is the Messenger of Allah.',
+                ar: 'أشهد أن لا إله إلا الله وأشهد أن محمداً رسول الله.',
+                fr: 'J\'atteste qu\'il n\'y a pas de dieu sauf Allah et que Muhammad est le Messager d\'Allah.',
+                ur: 'میں گواہی دیتا ہوں کہ اللہ کے سوا کوئی معبود نہیں اور محمد اللہ کے رسول ہیں۔',
+                tr: 'Allah\'tan başka ilah olmadığına ve Muhammed\'in Allah\'ın elçisi olduğuna şehadet ederim.',
+                id: 'Saya bersaksi bahwa tidak ada tuhan selain Allah dan Muhammad adalah utusan Allah.'
+            },
             reference: 'The Shahada'
         },
         options: [
-            { label: 'What are the next steps?', next: 'next_steps' },
-            { label: 'I want to explore more first', next: 'start' }
+            { label: { en: 'What are the next steps?', ar: 'ما هي الخطوات التالية؟', fr: 'Quelles sont les prochaines étapes?', ur: 'اگلے اقدامات کیا ہیں؟', tr: 'Sonraki adımlar neler?', id: 'Apa langkah selanjutnya?' }, next: 'next_steps' },
+            { label: { en: 'I want to explore more first', ar: 'أريد الاستكشاف أكثر أولاً', fr: 'Je veux d\'abord en explorer davantage', ur: 'میں پہلے مزید جاننا چاہتا ہوں', tr: 'Önce daha fazla keşfetmek istiyorum', id: 'Saya ingin menjelajahi lebih dulu' }, next: 'start' }
         ]
     },
 
@@ -1524,18 +1755,39 @@ const journeyData = {
     // Common Misconceptions
     misconceptions: {
         id: 'misconceptions',
-        title: 'Common Misconceptions About Islam',
-        content: 'Many misunderstandings exist about Islam due to media portrayals and lack of knowledge. Let us address some common misconceptions with evidence from authentic sources.',
+        title: {
+            en: 'Common Misconceptions About Islam',
+            ar: 'المفاهيم الخاطئة الشائعة عن الإسلام',
+            fr: 'Idées Fausses Courantes sur l\'Islam',
+            ur: 'اسلام کے بارے میں عام غلط فہمیاں',
+            tr: 'İslam Hakkında Yaygın Yanlış Anlamalar',
+            id: 'Kesalahpahaman Umum Tentang Islam'
+        },
+        content: {
+            en: 'Many misunderstandings exist about Islam due to media portrayals and lack of knowledge. Let us address some common misconceptions with evidence from authentic sources.',
+            ar: 'توجد العديد من المفاهيم الخاطئة عن الإسلام بسبب تصوير وسائل الإعلام ونقص المعرفة. دعونا نعالج بعض المفاهيم الخاطئة الشائعة بالأدلة من المصادر الموثوقة.',
+            fr: 'De nombreux malentendus existent sur l\'Islam en raison des représentations médiatiques et du manque de connaissances. Abordons quelques idées fausses courantes avec des preuves de sources authentiques.',
+            ur: 'میڈیا کی تصویر کشی اور علم کی کمی کی وجہ سے اسلام کے بارے میں بہت سی غلط فہمیاں موجود ہیں۔ آئیے مستند ذرائع سے ثبوت کے ساتھ کچھ عام غلط فہمیوں کو دور کریں۔',
+            tr: 'Medya tasvirleri ve bilgi eksikliği nedeniyle İslam hakkında birçok yanlış anlama var. Otantik kaynaklardan kanıtlarla bazı yaygın yanlış anlamaları ele alalım.',
+            id: 'Banyak kesalahpahaman tentang Islam karena penggambaran media dan kurangnya pengetahuan. Mari kita bahas beberapa kesalahpahaman umum dengan bukti dari sumber otentik.'
+        },
         verse: {
             arabic: 'يَا أَيُّهَا الَّذِينَ آمَنُوا إِن جَاءَكُمْ فَاسِقٌ بِنَبَإٍ فَتَبَيَّنُوا',
-            translation: 'O you who believe, if a wicked person comes to you with news, verify it.',
+            translation: {
+                en: 'O you who believe, if a wicked person comes to you with news, verify it.',
+                ar: 'يا أيها الذين آمنوا إن جاءكم فاسق بنبإ فتبينوا.',
+                fr: 'Ô vous qui croyez, si un pervers vous apporte une nouvelle, vérifiez-la.',
+                ur: 'اے ایمان والو! اگر کوئی فاسق تمہارے پاس کوئی خبر لائے تو تحقیق کر لو۔',
+                tr: 'Ey iman edenler, size bir fasık bir haber getirirse onu araştırın.',
+                id: 'Wahai orang-orang yang beriman, jika datang kepadamu orang fasik membawa suatu berita, maka periksalah.'
+            },
             reference: 'Surah Al-Hujurat 49:6'
         },
         options: [
-            { label: 'Islam and violence', next: 'islam_violence' },
-            { label: 'Women in Islam', next: 'women_islam' },
-            { label: 'Understanding Jihad', next: 'jihad_explained' },
-            { label: 'Islam and other faiths', next: 'islam_tolerance' }
+            { label: { en: 'Islam and violence', ar: 'الإسلام والعنف', fr: 'Islam et violence', ur: 'اسلام اور تشدد', tr: 'İslam ve şiddet', id: 'Islam dan kekerasan' }, next: 'islam_violence' },
+            { label: { en: 'Women in Islam', ar: 'المرأة في الإسلام', fr: 'Les femmes en Islam', ur: 'اسلام میں خواتین', tr: 'İslam\'da kadın', id: 'Wanita dalam Islam' }, next: 'women_islam' },
+            { label: { en: 'Understanding Jihad', ar: 'فهم الجهاد', fr: 'Comprendre le Jihad', ur: 'جہاد کو سمجھنا', tr: 'Cihadı anlamak', id: 'Memahami Jihad' }, next: 'jihad_explained' },
+            { label: { en: 'Islam and other faiths', ar: 'الإسلام والأديان الأخرى', fr: 'Islam et autres religions', ur: 'اسلام اور دوسرے مذاہب', tr: 'İslam ve diğer dinler', id: 'Islam dan agama lain' }, next: 'islam_tolerance' }
         ]
     },
 
@@ -2148,6 +2400,24 @@ class BeliefJourney {
         this.render();
     }
 
+    // Get current language code
+    getLang() {
+        if (typeof window.langManager !== 'undefined') {
+            return window.langManager.getCurrentLanguage();
+        }
+        return 'en';
+    }
+
+    // Get localized text from object {en: '...', ar: '...'} or return string as-is
+    getLocalizedText(textObj) {
+        if (typeof textObj === 'string') return textObj;
+        if (typeof textObj === 'object' && textObj !== null) {
+            const lang = this.getLang();
+            return textObj[lang] || textObj['en'] || '';
+        }
+        return '';
+    }
+
     // Get translated text with fallback
     getTranslation(key, fallback) {
         if (typeof window.langManager !== 'undefined') {
@@ -2164,12 +2434,16 @@ class BeliefJourney {
         const progressDots = this.history.map(() => '<span class="progress-dot completed"></span>').join('') +
             '<span class="progress-dot active"></span>';
 
+        const title = this.getLocalizedText(node.title);
+        const content = this.getLocalizedText(node.content);
+
         let verseHtml = '';
         if (node.verse) {
+            const verseTranslation = this.getLocalizedText(node.verse.translation);
             verseHtml = `
                 <div class="verse">
                     <p class="arabic" style="font-family: 'Amiri', serif; font-size: 1.5rem; color: var(--primary-green);">${node.verse.arabic}</p>
-                    <p style="font-style: italic; margin: 0.5rem 0;">"${node.verse.translation}"</p>
+                    <p style="font-style: italic; margin: 0.5rem 0;">"${verseTranslation}"</p>
                     <p style="color: var(--gold); font-weight: 600; font-size: 0.9rem;">- ${node.verse.reference}</p>
                 </div>
             `;
@@ -2179,7 +2453,7 @@ class BeliefJourney {
         if (node.options) {
             optionsHtml = node.options.map(opt => `
                 <div class="journey-option" data-next="${opt.next}">
-                    <h4>${opt.label}</h4>
+                    <h4>${this.getLocalizedText(opt.label)}</h4>
                 </div>
             `).join('');
         }
@@ -2198,8 +2472,8 @@ class BeliefJourney {
                 <div class="journey-progress">
                     ${progressDots}
                 </div>
-                <h2>${node.title}</h2>
-                <p>${node.content}</p>
+                <h2>${title}</h2>
+                <p>${content}</p>
                 ${verseHtml}
                 <div class="journey-options">
                     ${optionsHtml}

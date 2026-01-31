@@ -179,6 +179,13 @@ const translations = {
         thankYouMsg: 'Thank you for your feedback! May Allah reward you for helping us improve.',
         backHome: 'Back to Home',
 
+        // Journey Page
+        journeyBack: 'Go Back',
+        journeyRestart: 'Start Over',
+        journeyGoPrayer: 'Go to Prayer Times',
+        journeyContinue: 'Continue',
+        journeyLearnMore: 'Learn More',
+
         // Search Page
         searchTitle: 'Search Hadith Collection',
         searchPlaceholder: 'Search for keywords...',
